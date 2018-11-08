@@ -1,0 +1,58 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/lynzt/" . ".emacs.d/")
+ ("/Users/lynzt/coding/lynzt-learning/frontend_masters/" . "js-the-hard-parts/")
+ ("/Users/lynzt/coding/lynzt-learning/" . "frontend_masters/")
+ ("/Users/lynzt/coding/" . "lynzt-learning/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/lynzt/"
+ "/Users/lynzt/.emacs.d/"
+ "/Users/lynzt/coding/emacs-tut/"
+ "/Users/lynzt/coding/lynzt-learning/next-day-video/"
+ "/Users/lynzt/coding/lynzt-learning/frontend_masters/js-the-hard-parts/"
+ "/Users/lynzt/coding/channeldragon/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ ".emacs"
+ "init.el"
+ "notes.org"
+ "python-architecture.py"
+ "generators.py"
+ "example1.js"
+ "#example1.js#"
+ "app.js"
+ "clock.py"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/lynzt/.emacs.d/" (23524 35294 68969 637000) "games/" "elpa/" ".#init.el" "init.el" "auto-save-list/" "ido.last~" ".DS_Store" "init.el~" "ido.last" "../" "./")
+
+ ("/Users/lynzt/" (23524 29688 785591 910000) ".viminfo" ".bash_history" ".gitconfig" ".cache/" "Downloads/" ".oh-my-zsh/" ".dvdcss/" ".bash_profile" ".vscode/" "vids/" "Documents/" ".npm/" "coding/" ".Trash/" "Dropbox/" ".emacs~" "Applications/" ".emacs" ".vimrc" "Movies/" ".ssh/" ".dbeaver-drivers/" "#foo#" "#tutorial#" "postgres_data/" ".dropbox/" "Public/" "#.emacs#" ".zcompdump-lynzt’s mbp-5.3" ".cups/" ".gitignore_global" ".pgadmin/" ".octave_hist" ".emacs.d/" ".oracle_jre_usage/" "Library/" "Desktop/" ".zsh_history" "scanned/" ".atom/" ".zcompdump-MacBook Pro (2)-5.3" "Pictures/" ".psql_history" ".local/" ".zcompdump-MacBook Pro-5.3" ".zshrc" ".subversion/" ".netrc" ".vagrant.d/" "config.fish" ".hgignore_global" ".stCommitMsg" "tutorial~" "test/" ".CFUserTextEncoding" "VirtualBox VMs/" ".gnupg/" ".DS_Store" ".emacs111" ".vim/" "tutorial" "octave-workspace" ".node-gyp/" ".gnupg_pre_2.1/" ".docker/" ".gitkraken/" "Music/" ".config/" ".eclipse/" "scrivener/" ".quokka/" ".dbeaver4/" "../" "./")
+
+ ("/Users/lynzt/coding/emacs-tut/" (23524 28600 5141 158000) "#notes.org#" "emacs1.js" "../" "./")
+
+ ("/Users/lynzt/coding/channeldragon/" (23514 70 590727 274000) "sql/" "app.js" "channel_collections.csv" "views/" "backup/" ".nodemon-find-ref" ".git/" "Procfile" "dev/" "lib/" "Vagrantfile" "scripts/" "dd" "package.json" ".gitignore" "public/" "README.md" "notes.todo" ".vagrant/" "test_this.py" "spec/" "node_modules/" "bundle.js" "clock.py" "Vagrantfile11" "twitterBackupTbl.sql" "bin/" "test/" "requirements.txt" ".DS_Store" "collections.csv" "../" "./")
+
+ ("/Users/lynzt/coding/lynzt-learning/frontend_masters/js-the-hard-parts/" (23512 43520 403625 17000) "oop.js" "callbacks.js" "new.js" ".git/" "js-the-hard-parts.pdf" "example1.js" "oop.md" "callbacks.md" "../" "./")
+
+ ("/Users/lynzt/coding/lynzt-learning/next-day-video/" (23514 20552 78441 324000) ".#generators.py" "python-architecture.py~" "generators.py" "python-architecture.py" "#generators.py#" "../" "./")
+
+ ("/Users/" (23171 5613 287876 198000) "Guest/" "Shared/" ".localized" "lynzt/" "../" "./")
+
+ ("/Users/lynzt/coding/lynzt-learning/" (23512 18501 662606 379000) "coursera/" "coding_train/" "meth_meth_method/" "fastai/" "next-day-video/" "yt-codingtrain/" "yt-siraj-raval/" "tf-tuts/" ".DS_Store" "fun_fun_function/" "frontend_masters/" "../" "./")
+
+ ("/Users/lynzt/coding/" (23507 53938 641113 508000) "scrape-scripts/" "bucky-app/" "ui-theme-template/" "rename_scans/" "nn-fastai/" "random/" "python_people_names/" "weather-app/" "twitter_scripts/" "globalgrey-scripts/" "Adminator-admin-dashboard/" "yt-video-tag-check/" "myvoicething/" "youtubePlaylistDL/" "package-lock.json" "mplscf/" "tcmtransit/" "medicaid-providers/" "medicaid-provider-scraper/" "cci-gilded-rose-kata/" "channeldragon/" "react-node-test/" "python-twitter/" "tut2/" "cef/" "medicaid-providers-new/" "lynzteee.com/" "side-projects/" "tut3/" "Back-End-Developer-Interview-Questions/" "fec-cms/" "mnpay/" "node_modules/" "medicaid-provider-scraper-orig/" "emacs-tut/" "cef-data/" "gsearch-images/" "price-track/" "test/" "lynzt-learning/" "bb/" "hacktoberfest-2k18-katas/" "ad/" "globalgrey/" ".DS_Store" "resistmpls/" "temp/" "learning-tf-tuts/" "my-theme-syntax/" "node-react-docker-compose/" "don't use courses_learning/" "../" "./")
+
+ ("/Users/lynzt/coding/lynzt-learning/frontend_masters/" (23505 46500 782421 24000) "js-new-hard-parts/" "advanced-git/" "rethinking-async-js/" "es6-right-parts/" "hardcore-functional-programming/" "deep-js-foundations/" "functional-light-js/" ".DS_Store" "intro-ds-interviews/" "js-the-hard-parts/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
