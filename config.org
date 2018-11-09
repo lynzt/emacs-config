@@ -8,6 +8,18 @@
   (line-number-mode 1)
   (column-number-mode 1)
 #+END_SRC
+** mark multiple
+#+BEGIN_SRC emacs-lisp
+  (use-package mark-multiple
+    :ensure t
+    :bind ("C-c q" . 'mark-next-like-this))
+#+END_SRC
+** expand region
+#+BEGIN_SRC emacs-lisp
+  (use-package expand-region
+    :ensure t
+    :bind ("C-q" . er/expand-region))
+#+END_SRC
 * Org
 ** org bullets
 #+BEGIN_SRC emacs-lisp
@@ -21,6 +33,10 @@
 #+BEGIN_SRC emacs-lisp
   (add-to-list 'org-structure-template-alist
 	       '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC"))
+#+END_SRC
+** indent
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'org-mode-hood 'org-indent-mode)
 #+END_SRC
 * exwm
 #+BEGIN_SRC emacs-lisp
@@ -55,9 +71,11 @@
 #+END_SRC
 ** change words to symbols
 #+BEGIN_SRC emacs-lisp
-  (when window-system (global-prettify-symbols-mode t))
+  (use-package pretty-mode
+    :ensure t
+    :config
+    (global-pretty-mode t))
 #+END_SRC
-
 * emacs gui
 ** no toolbar
 #+BEGIN_SRC emacs-lisp
@@ -178,7 +196,7 @@
 #+BEGIN_SRC emacs-lisp
   (use-package rainbow-mode
     :ensure t
-    :init (rainbow-mode 1))
+    :init (add-hook 'prog-mode-hook 'rainbow-mode))
 #+END_SRC
 #+BEGIN_SRC emacs-lisp
   (use-package rainbow-delimiters
@@ -223,4 +241,33 @@
     :ensure t
     :init
     (add-hook 'after-init-hook 'global-company-mode))
+#+END_SRC
+* kill ring
+#+BEGIN_SRC emacs-lisp
+  (use-package popup-kill-ring
+    :ensure t
+    :bind ("M-y" . popup-kill-ring))
+#+END_SRC
+* swiper
+#+BEGIN_SRC emacs-lisp
+  (use-package swiper
+    :ensure t
+    :bind ("C-s" . swiper))
+#+END_SRC
+
+
+
+
+
+
+* yasnippet
+#+BEGIN_SRC emacs-lisp
+  (use-package yasnippet
+    :ensure t
+    :config
+    (use-package yasnippet-snippets
+      :ensure t)
+    (yas-reload-all))
+  (add-hook 'prog-mode-hook #'yas-minor-mode)
+
 #+END_SRC

@@ -3,6 +3,14 @@
 (line-number-mode 1)
 (column-number-mode 1)
 
+(use-package mark-multiple
+  :ensure t
+  :bind ("C-c q" . 'mark-next-like-this))
+
+(use-package expand-region
+  :ensure t
+  :bind ("C-q" . er/expand-region))
+
 (use-package org-bullets
   :ensure t
   :config
@@ -10,6 +18,8 @@
 
 (add-to-list 'org-structure-template-alist
 	     '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC"))
+
+(add-hook 'org-mode-hood 'org-indent-mode)
 
 (use-package exwm
   :ensure t
@@ -30,7 +40,10 @@
 
 (when window-system (global-hl-line-mode t))
 
-(when window-system (global-prettify-symbols-mode t))
+(use-package pretty-mode
+  :ensure t
+  :config
+  (global-pretty-mode t))
 
 (tool-bar-mode -1)
 
@@ -101,7 +114,7 @@
 
 (use-package rainbow-mode
   :ensure t
-  :init (rainbow-mode 1))
+  :init (add-hook 'prog-mode-hook 'rainbow-mode))
 
 (use-package rainbow-delimiters
   :ensure t
@@ -138,3 +151,19 @@
   :ensure t
   :init
   (add-hook 'after-init-hook 'global-company-mode))
+
+(use-package popup-kill-ring
+  :ensure t
+  :bind ("M-y" . popup-kill-ring))
+
+(use-package swiper
+  :ensure t
+  :bind ("C-s" . swiper))
+
+(use-package yasnippet
+  :ensure t
+  :config
+  (use-package yasnippet-snippets
+    :ensure t)
+  (yas-reload-all))
+(add-hook 'prog-mode-hook #'yas-minor-mode)
