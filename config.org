@@ -7,6 +7,14 @@
     (add-hook 'org-mode-hook (lambda () (org-bullets-mode))))
 #+END_SRC
 
+* exwm
+#+BEGIN_SRC emacs-lisp
+  (use-package exwm
+    :ensure t
+    :config
+    (require 'exwm-config)
+    (exwm-config-default))
+#+END_SRC
 * Which Key
 #+BEGIN_SRC emacs-lisp
   (use-package which-key
@@ -54,6 +62,25 @@
   (setq auto-save-default nil)
 #+END_SRC
 
+* modeline
+** spaceline
+#+BEGIN_SRC emacs-lisp
+  (use-package spaceline
+    :ensure t
+    :config
+    (require 'spaceline-config)
+    (setq powerline-default-separator (quote arrow))
+    (spaceline-spacemacs-theme))
+#+END_SRC
+** dimish - hide some minor modes
+#+BEGIN_SRC emacs-lisp
+  (use-package diminish
+    :ensure t
+    :init
+    (diminish 'beacon-mode)
+    (diminish 'rainbow-mode) 
+    (diminish 'which-key-mode))
+#+END_SRC
 * IDO
 ** enable ido mode
 #+BEGIN_SRC emacs-lisp
@@ -106,7 +133,6 @@
     ("M-s" . avy-goto-char))
 #+END_SRC
 
-  
 * config edit / reload
 ** edit
 #+BEGIN_SRC emacs-lisp
@@ -128,4 +154,34 @@
   (use-package rainbow-mode
     :ensure t
     :init (rainbow-mode 1))
+#+END_SRC
+* switch-window
+#+BEGIN_SRC emacs-lisp
+  (use-package switch-window
+    :ensure t
+    :config
+    (setq switch-window-input-style 'minibuffer)
+    (setq switch-window-increase 4)
+    (setq switch-window-threshold 2)
+    (setq switch-window-shortcut-style 'qwerty)
+    (setq switch-window-qwerty-shortcuts
+	  '("a" "s" "d" "f" "j" "k" "l"))
+    :bind
+    ([remap other-window] . switch-window))
+#+END_SRC
+* window splitting fcn
+#+BEGIN_SRC emacs-lisp
+  (defun split-and-follow-horizontally()
+    (interactive)
+    (split-window-below)
+    (balance-windows)
+    (other-window 1))
+  (global-set-key (kbd "C-x 2") 'split-and-follow-horizontally)
+
+  (defun split-and-follow-vertically()
+    (interactive)
+    (split-window-right)
+    (balance-windows)
+    (other-window 1))
+  (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
 #+END_SRC
