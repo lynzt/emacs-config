@@ -15,35 +15,6 @@
 (when (file-readable-p "~/.emacs.d/config.org")
   (org-babel-load-file (expand-file-name "~/.emacs.d/config.org")))
 
-(use-package which-key
-  :ensure t
-  :init
-  
-(which-key-mode))
-
-
-(use-package beacon
-  :ensure t
-  :init
-  (beacon-mode 1))
-
-
-(when window-system (global-hl-line-mode t))
-
-(when window-system (global-prettify-symbols-mode t))
-
-
-(tool-bar-mode -1)
-
-(scroll-bar-mode -1)
-
-
-(setq package-enable-at-startup nil)
-(setq ring-bell-function 'ignore)
-(setq inhibit-startup-screen t)
-(setq make-backup-file nil)
-(setq auto-save-default nil)
-
 ;;;;;;;;;;;;;;;;;;;;;;
 
 (custom-set-variables
@@ -57,7 +28,7 @@
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
-    (ido-vertical-mode ido-verticle-mode beacon spacemacs-theme zenburn-theme which-key use-package try projectile org nyan-mode neotree monokai-theme monokai-alt-theme molokai-theme labburn-theme hc-zenburn-theme company clojure-mode-extra-font-locking cider anti-zenburn-theme))))
+    (rainbow-mode avy helm helm-config smex ido-vertical-mode ido-verticle-mode beacon spacemacs-theme zenburn-theme which-key use-package try projectile org nyan-mode neotree monokai-theme monokai-alt-theme molokai-theme labburn-theme hc-zenburn-theme company clojure-mode-extra-font-locking cider anti-zenburn-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
