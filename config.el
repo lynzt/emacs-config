@@ -1,7 +1,15 @@
+(global-subword-mode 1)
+
+(line-number-mode 1)
+(column-number-mode 1)
+
 (use-package org-bullets
   :ensure t
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode))))
+
+(add-to-list 'org-structure-template-alist
+	     '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC"))
 
 (use-package exwm
   :ensure t
@@ -67,6 +75,13 @@
 
 (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
 
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook)
+  (setq dashboard-items '((recents . 10)))
+  (setq dashboard-banner-logo-title "Don't wait. The time will never be just right"))
+
 (global-set-key (kbd "C-x b") 'ibuffer)
 
 (use-package avy
@@ -87,6 +102,11 @@
 (use-package rainbow-mode
   :ensure t
   :init (rainbow-mode 1))
+
+(use-package rainbow-delimiters
+  :ensure t
+  :init
+  (rainbow-delimiters-mode 1))
 
 (use-package switch-window
   :ensure t
@@ -113,3 +133,8 @@
   (balance-windows)
   (other-window 1))
 (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
+
+(use-package company
+  :ensure t
+  :init
+  (add-hook 'after-init-hook 'global-company-mode))

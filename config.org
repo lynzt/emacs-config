@@ -1,3 +1,13 @@
+* minor settings
+** subword
+#+BEGIN_SRC emacs-lisp
+  (global-subword-mode 1)
+#+END_SRC
+** show lines and column numbers
+#+BEGIN_SRC emacs-lisp
+  (line-number-mode 1)
+  (column-number-mode 1)
+#+END_SRC
 * Org
 ** org bullets
 #+BEGIN_SRC emacs-lisp
@@ -7,6 +17,11 @@
     (add-hook 'org-mode-hook (lambda () (org-bullets-mode))))
 #+END_SRC
 
+** basic config
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'org-structure-template-alist
+	       '("el" "#+BEGIN_SRC emacs-lisp\n?\n#+END_SRC"))
+#+END_SRC
 * exwm
 #+BEGIN_SRC emacs-lisp
   (use-package exwm
@@ -111,6 +126,16 @@
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "C-x C-b") 'ido-switch-buffer)
 #+END_SRC
+* dashboard
+#+BEGIN_SRC emacs-lisp
+  (use-package dashboard
+    :ensure t
+    :config
+    (dashboard-setup-startup-hook)
+    (setq dashboard-items '((recents . 10)))
+    (setq dashboard-banner-logo-title "Don't wait. The time will never be just right"))
+  
+#+END_SRC
 * buffers
 ** enable ibuffer
 #+BEGIN_SRC emacs-lisp
@@ -149,11 +174,17 @@
   (global-set-key (kbd "C-c r") 'config-reload)
 #+END_SRC
 * rainbow
-** show hex colors
+** Show Hex colors
 #+BEGIN_SRC emacs-lisp
   (use-package rainbow-mode
     :ensure t
     :init (rainbow-mode 1))
+#+END_SRC
+#+BEGIN_SRC emacs-lisp
+  (use-package rainbow-delimiters
+    :ensure t
+    :init
+    (rainbow-delimiters-mode 1))
 #+END_SRC
 * switch-window
 #+BEGIN_SRC emacs-lisp
@@ -184,4 +215,12 @@
     (balance-windows)
     (other-window 1))
   (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
+#+END_SRC
+* random fcnsp
+* auto completion
+#+BEGIN_SRC emacs-lisp
+  (use-package company
+    :ensure t
+    :init
+    (add-hook 'after-init-hook 'global-company-mode))
 #+END_SRC
