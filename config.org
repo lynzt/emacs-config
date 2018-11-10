@@ -20,6 +20,27 @@
     :ensure t
     :bind ("C-q" . er/expand-region))
 #+END_SRC
+** duplicate line
+#+BEGIN_SRC emacs-lisp
+  (defun duplicate-line()
+    (interactive)
+    (move-beginning-of-line 1)
+    (kill-line)
+    (yank)
+    (open-line 1)
+    (next-line 1)
+    (yank))
+  (global-set-key (kbd "C-c d") 'duplicate-line)
+#+END_SRC
+** enter new line below
+#+BEGIN_SRC emacs-lisp
+  (defun insert-line-below()
+    (interactive)
+    (move-end-of-line 1)
+    (open-line 1)
+    (next-line 1))
+  (global-set-key (kbd "C-c n") 'insert-line-below)
+#+END_SRC
 * Org
 ** org bullets
 #+BEGIN_SRC emacs-lisp

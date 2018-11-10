@@ -11,6 +11,23 @@
   :ensure t
   :bind ("C-q" . er/expand-region))
 
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank))
+(global-set-key (kbd "C-c d") 'duplicate-line)
+
+(defun insert-line-below()
+  (interactive)
+  (move-end-of-line 1)
+  (open-line 1)
+  (next-line 1))
+(global-set-key (kbd "C-c n") 'insert-line-below)
+
 (use-package org-bullets
   :ensure t
   :config
