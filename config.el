@@ -1,7 +1,10 @@
+(when window-system (set-frame-size (selected-frame) 120 60))
+
 (global-subword-mode 1)
 
 (line-number-mode 1)
 (column-number-mode 1)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 
 (use-package mark-multiple
   :ensure t
@@ -19,7 +22,7 @@
   (open-line 1)
   (next-line 1)
   (yank))
-(global-set-key (kbd "C-c d") 'duplicate-line)
+(global-set-key (kbd "C-c C-d") 'duplicate-line)
 
 (defun insert-line-below()
   (interactive)
@@ -184,3 +187,31 @@
     :ensure t)
   (yas-reload-all))
 (add-hook 'prog-mode-hook #'yas-minor-mode)
+
+(use-package magit
+  :ensure t
+  :bind ("C-x g" . magit-status))
+
+(use-package git-gutter
+  :ensure t
+  :config (global-git-gutter-mode)
+  :init
+  (progn
+    (setq git-gutter:separator-sign " "
+	  git-gutter:lighter " GG"))
+  :config
+  (progn
+    (set-face-background 'git-gutter:deleted "#990A1B")
+    (set-face-foreground 'git-gutter:deleted "#990A1B")
+    (set-face-background 'git-gutter:modified "#00736F")
+    (set-face-foreground 'git-gutter:modified "#00736F")
+    (set-face-background 'git-gutter:added "#546E00")
+    (set-face-foreground 'git-gutter:added "#546E00"))
+  :bind (("C-x p" . git-gutter:previous-hunk)
+	 ("C-x n" . git-gutter:next-hunk)
+	 ("C-x v =" . git-gutter:popup-hunk)
+	 ("C-x v r" . git-gutter:revert-hunk)))
+
+(use-package docker
+  :ensure t
+  :bind ("C-c d" . docker))
