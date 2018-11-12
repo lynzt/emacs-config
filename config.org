@@ -85,10 +85,11 @@
 * beacon
 ** flash line when changing buffers
 #+BEGIN_SRC emacs-lisp
-  (use-package beacon
-    :ensure t
-    :init
-    (beacon-mode 1))
+    (use-package beacon
+      :ensure t
+      :init
+      (beacon-mode 1)
+      (setq beacon-color "#1d829e"))
 #+END_SRC
 
 * window system
@@ -336,7 +337,7 @@
   (use-package zoom
     :ensure t
     :init
-    (zoom-mode t))
+    (zoom-mode t)) 
 #+END_SRC
 * ztree
 #+BEGIN_SRC emacs-lisp

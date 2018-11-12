@@ -56,7 +56,8 @@
 (use-package beacon
   :ensure t
   :init
-  (beacon-mode 1))
+  (beacon-mode 1)
+  (setq beacon-color "#1d829e"))
 
 (when window-system (global-hl-line-mode t))
 
