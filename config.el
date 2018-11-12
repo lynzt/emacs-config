@@ -59,6 +59,7 @@ there's a region, all lines that region covers will be duplicated."
 
 (use-package beacon
   :ensure t
+  :bind* (("C-c b" . beacon-blink))
   :init
   (beacon-mode 1)
   (setq beacon-color "#1d829e"))
@@ -237,8 +238,7 @@ there's a region, all lines that region covers will be duplicated."
 
 (use-package ztree
   :ensure t
-  :bind* (("C-c k" . ztree-dir)
-    ("C-c b" . ztree-diff))
+  :bind* (("C-c k" . ztree-dir))
   :init
   (setq ztree-dir-move-focus t))
 
@@ -268,3 +268,5 @@ there's a region, all lines that region covers will be duplicated."
     (global-set-key (kbd "M-d") 'mc/mark-next-like-this)
     ;; (global-set-key (kbd "M-D") 'mc/mark-previous-like-this)
     (global-set-key [(meta shift g)] 'mc/mark-all-like-this)))
+
+(fset 'yes-or-no-p 'y-or-n-p)
