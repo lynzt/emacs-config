@@ -4,11 +4,14 @@
 (setq mc/cmds-to-run-for-all
       '(
 	org-beginning-of-line
+	org-end-of-line
 	))
 
 (setq mc/cmds-to-run-once
       '(
+	delete-window
 	org-kill-line
 	org-self-insert-command
 	org-time-stamp
+	switch-window
 	))

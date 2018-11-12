@@ -66,6 +66,10 @@
   :config
   (global-pretty-mode t))
 
+(setq-default cursor-type 'bar)
+
+(set-cursor-color "#ed9421")
+
 (tool-bar-mode -1)
 
 (scroll-bar-mode -1)
@@ -253,7 +257,10 @@
   (setq yahoo-weather-format "[%(weather) %(temperature)(%(wind-chill))°F]"))
 
 (use-package multiple-cursors
-  :ensure t)
-(global-set-key (kbd "C-c C-m C-c") 'mc/edit-lines)
-(global-set-key (kbd "C-.") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-,") 'mc/mark-previous-like-this)
+  :ensure t
+  :init
+  (progn
+    (global-set-key (kbd "C-c m") 'mc/edit-lines)
+    (global-set-key (kbd "M-d") 'mc/mark-next-like-this)
+    ;; (global-set-key (kbd "M-D") 'mc/mark-previous-like-this)
+    (global-set-key [(meta shift g)] 'mc/mark-all-like-this)))

@@ -104,6 +104,14 @@
     :config
     (global-pretty-mode t))
 #+END_SRC
+* cursor (bar)
+#+BEGIN_SRC emacs-lisp
+  (setq-default cursor-type 'bar)
+#+END_SRC
+* cursor color
+#+BEGIN_SRC emacs-lisp
+  (set-cursor-color "#ed9421")
+#+END_SRC
 * emacs gui
 ** no toolbar
 #+BEGIN_SRC emacs-lisp
@@ -113,7 +121,6 @@
 #+BEGIN_SRC emacs-lisp
   (scroll-bar-mode -1)
 #+END_SRC
-
 # emacs settings
 #+BEGIN_SRC emacs-lisp
   (setq package-enable-at-startup nil)
@@ -378,8 +385,11 @@
 * multiple cursors
 #+BEGIN_SRC emacs-lisp
   (use-package multiple-cursors
-    :ensure t)
-  (global-set-key (kbd "C-c C-m C-c") 'mc/edit-lines)
-  (global-set-key (kbd "C-.") 'mc/mark-next-like-this)
-  (global-set-key (kbd "C-,") 'mc/mark-previous-like-this)
+    :ensure t
+    :init
+    (progn
+      (global-set-key (kbd "C-c m") 'mc/edit-lines)
+      (global-set-key (kbd "M-d") 'mc/mark-next-like-this)
+      ;; (global-set-key (kbd "M-D") 'mc/mark-previous-like-this)
+      (global-set-key [(meta shift g)] 'mc/mark-all-like-this)))
 #+END_SRC
