@@ -4,7 +4,7 @@
 (
  ("/Users/lynzt/Downloads/" . "emacs/")
  ("/Users/lynzt/coding/medicaid-provider-scraper/" . "scripts/")
- ("/Users/lynzt/" . ".emacs.d/")
+ ("/Users/lynzt/" . "Downloads/")
  ("/Users/lynzt/coding/lynzt-learning/frontend_masters/" . "js-the-hard-parts/")
  ("/Users/lynzt/coding/lynzt-learning/" . "frontend_masters/")
  ("/Users/lynzt/coding/" . "medicaid-provider-scraper/")
@@ -12,10 +12,10 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/Users/lynzt/Downloads/"
  "/Users/lynzt/.emacs.d/"
  "/Users/lynzt/Downloads/facebook-lynzt/"
  "/Users/lynzt/Downloads/emacs/"
- "/Users/lynzt/Downloads/"
  "/Users/lynzt/coding/medicaid-provider-scraper/scripts/"
  "/Users/lynzt/"
  "/Users/lynzt/coding/emacs-tut/"
@@ -26,12 +26,12 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "emacs-tut.org"
  "config.org"
  "questions.org"
  "questions"
  "temp1.py"
  "init.el"
- "emacs-tut.org"
  "03_geocode.py"
  ".emacs-old"
  "test.org"
@@ -40,7 +40,7 @@
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/lynzt/.emacs.d/" (23529 32444 694414 465000) "games/" ".git/" "config.org~" "elpa/" "recentf" "bookmarks" "init.el" "auto-save-list/" "config.el" "#config.org#" "recentf~" "ido.last~" "config.org" "smex-items" ".DS_Store" ".mc-lists.el" "init.el~" "ido.last" "snippets/" "../" "./")
+ ("/Users/lynzt/.emacs.d/" (23529 45003 167279 484000) "games/" ".git/" "config.org~" "elpa/" "recentf" "bookmarks" "init.el" "auto-save-list/" "config.el" "#config.org#" "recentf~" "ido.last~" "config.org" "smex-items" ".DS_Store" ".mc-lists.el" "init.el~" "ido.last" "snippets/" "../" "./")
 
  ("/Users/lynzt/Downloads/facebook-lynzt/" (23529 32483 904616 957000) "photos/" "html/" "index.htm" "questions.org" ".DS_Store" "messages/" ".#questions.org" "../" "./")
 

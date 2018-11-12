@@ -14,22 +14,26 @@
   :ensure t
   :bind ("C-q" . er/expand-region))
 
-(defun duplicate-line()
-  (interactive)
-  (move-beginning-of-line 1)
-  (kill-line)
-  (yank)
-  (open-line 1)
-  (next-line 1)
-  (yank))
-(global-set-key (kbd "C-c C-d") 'duplicate-line)
-
-(defun insert-line-below()
-  (interactive)
-  (move-end-of-line 1)
-  (open-line 1)
-  (next-line 1))
-(global-set-key (kbd "C-c n") 'insert-line-below)
+(defun duplicate-current-line-or-region (arg)
+  "Duplicates the current line or region ARG times.
+If there's no region, the current line will be duplicated. However, if
+there's a region, all lines that region covers will be duplicated."
+  (interactive "p")
+  (let (beg end (origin (point)))
+    (if (and mark-active (> (point) (mark)))
+	(exchange-point-and-mark))
+    (setq beg (line-beginning-position))
+    (if mark-active
+	(exchange-point-and-mark))
+    (setq end (line-end-position))
+    (let ((region (buffer-substring-no-properties beg end)))
+      (dotimes (i arg)
+	(goto-char end)
+	(newline)
+	(insert region)
+	(setq end (point)))
+      (goto-char (+ origin (* (length region) arg) arg)))))
+(global-set-key (kbd "C-c d") 'duplicate-current-line-or-region)
 
 (use-package org-bullets
   :ensure t
@@ -224,7 +228,7 @@
 
 (use-package docker
   :ensure t
-  :bind ("C-c d" . docker))
+  :bind ("C-c C-d" . docker))
 
 (use-package zoom
   :ensure t
