@@ -220,3 +220,10 @@
   :ensure t
   :init
   (zoom-mode t))
+
+(use-package ztree
+  :ensure t
+  :bind* (("C-c k" . ztree-dir)
+    ("C-c b" . ztree-diff))
+  :init
+  (setq ztree-dir-move-focus t))
