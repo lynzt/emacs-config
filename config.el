@@ -130,7 +130,8 @@
 (defun config-visit()
   (interactive)
   (find-file "~/.emacs.d/config.org"))
-(global-set-key (kbd "C-c e") 'config-visit)
+(global-set-key
+(kbd "C-c e") 'config-visit)
 
 (defun config-reload()
   (interactive)
@@ -250,3 +251,9 @@
   (setq yahoo-weather-use-F t)
   (setq yahoo-weather-temperture-format "%d")
   (setq yahoo-weather-format "[%(weather) %(temperature)(%(wind-chill))°F]"))
+
+(use-package multiple-cursors
+  :ensure t)
+(global-set-key (kbd "C-c C-m C-c") 'mc/edit-lines)
+(global-set-key (kbd "C-.") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-,") 'mc/mark-previous-like-this)
