@@ -215,3 +215,8 @@
 (use-package docker
   :ensure t
   :bind ("C-c d" . docker))
+
+(use-package zoom
+  :ensure t
+  :init
+  (zoom-mode t))

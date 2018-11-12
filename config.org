@@ -331,3 +331,10 @@
     :ensure t
     :bind ("C-c d" . docker))
 #+END_SRC
+* zoom
+#+BEGIN_SRC emacs-lisp
+  (use-package zoom
+    :ensure t
+    :init
+    (zoom-mode t))
+#+END_SRC
