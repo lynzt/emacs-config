@@ -87,8 +87,12 @@
   :ensure t
   :init
   (diminish 'beacon-mode)
-  (diminish 'rainbow-mode) 
-  (diminish 'which-key-mode))
+  (diminish 'rainbow-mode)
+  (diminish 'which-key-mode)
+  (diminish 'global-whitespace-mode)
+  (diminish 'zoom-mode)
+  (diminish 'yas-minor-mode)
+  (diminish 'subword-mode))
 
 (setq ido-enable-flex-matching nil)
 (setq ido-create-new-buffer 'always)
