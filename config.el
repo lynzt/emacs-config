@@ -237,3 +237,12 @@
     (newline-mark 10 [8629 10]) ; 10 LINE FEED
     (tab-mark 9 [9655 9] [92 9]) ; 9 TAB, 9655 WHITE RIGHT-POINTING TRIANGLE 「▷」
     ))
+
+(use-package yahoo-weather
+  :ensure t
+  :init
+  (yahoo-weather-mode 1)
+  (setq yahoo-weather-location "55407")
+  (setq yahoo-weather-use-F t)
+  (setq yahoo-weather-temperture-format "%d")
+  (setq yahoo-weather-format "[%(weather) %(temperature)(%(wind-chill))°F]"))
