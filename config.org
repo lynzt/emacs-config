@@ -1,3 +1,10 @@
+* evil mode
+#+BEGIN_SRC emacs-lisp
+  (use-package evil
+    :ensure t
+    :init
+    (evil-mode 1))
+#+END_SRC
 * auto backups (dir)
 #+BEGIN_SRC emacs-lisp
   (setq backup-by-copying t
@@ -90,7 +97,6 @@
   (use-package which-key
     :ensure t
     :init
-    
 (which-key-mode))
 #+END_SRC
 
@@ -429,7 +435,7 @@
 	      (define-key prog-mode-map "{" 'electric-pair)))
 #+END_SRC
 * web mode
-#+BEGIN_SRC emacs-lisp
+##+BEGIN_SRC emacs-lisp
   (use-package web-mode
     :ensure t
     :config
@@ -440,7 +446,7 @@
 	  '(("css" . (ac-source-css-property))
 	    ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
     (set web-mode-enable-auto-closing t))
-#+END_SRC
+##+END_SRC
 * indent levels
 #+BEGIN_SRC emacs-lisp
   (setq default-tab-width 2
