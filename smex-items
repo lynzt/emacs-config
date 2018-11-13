@@ -1,16 +1,17 @@
 
 ;; ----- smex-history -----
 (
+ dired
  customize
  cd
  5x5
  arp
  dbx
  dig
- erc
 )
 
 ;; ----- smex-data -----
 (
  (customize . 1)
+ (dired . 1)
 )

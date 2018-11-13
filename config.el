@@ -1,3 +1,11 @@
+(setq backup-by-copying t
+      backup-directory-alist '(("." . "~/.backups/emacs/"))
+      delete-old-versions t
+      kept-new-versions 6
+      kept-old-versions 2
+      version-control t
+      create-lockfiles nil)
+
 (when window-system (set-frame-size (selected-frame) 120 60))
 
 (global-subword-mode 1)
@@ -251,15 +259,6 @@ there's a region, all lines that region covers will be duplicated."
     (tab-mark 9 [9655 9] [92 9]) ; 9 TAB, 9655 WHITE RIGHT-POINTING TRIANGLE 「▷」
     ))
 
-(use-package yahoo-weather
-  :ensure t
-  :init
-  (yahoo-weather-mode 1)
-  (setq yahoo-weather-location "55407")
-  (setq yahoo-weather-use-F t)
-  (setq yahoo-weather-temperture-format "%d")
-  (setq yahoo-weather-format "[%(weather) %(temperature)(%(wind-chill))°F]"))
-
 (use-package multiple-cursors
   :ensure t
   :init
@@ -270,3 +269,23 @@ there's a region, all lines that region covers will be duplicated."
     (global-set-key [(meta shift g)] 'mc/mark-all-like-this)))
 
 (fset 'yes-or-no-p 'y-or-n-p)
+
+(use-package yahoo-weather
+  :ensure t
+  :init
+  (yahoo-weather-mode 1)
+  (setq yahoo-weather-location "55407")
+  (setq yahoo-weather-use-F t)
+  (setq yahoo-weather-temperture-format "%d")
+  (setq yahoo-weather-format "[%(weather) %(temperature)(%(wind-chill))]"))
+
+(defun electric-pair()
+  (interactive)
+  (if (eolp) (let (parens-requre-spaces) (insert-pair)) (self-insert-command 1)))
+(add-hook 'prog-mode-hook
+	  (lambda ()
+	    (define-key prog-mode-map "\"" 'electric-pair)
+	    (define-key prog-mode-map "\'" 'electric-pair)
+	    (define-key prog-mode-map "(" 'electric-pair)
+	    (define-key prog-mode-map "[" 'electric-pair)
+	    (define-key prog-mode-map "{" 'electric-pair)))
