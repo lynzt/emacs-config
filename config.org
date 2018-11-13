@@ -448,8 +448,13 @@
     (set web-mode-enable-auto-closing t))
 ##+END_SRC
 * indent levels
+* indent no tabs
 #+BEGIN_SRC emacs-lisp
-  (setq default-tab-width 2
-	python-indent-level 4
-	perl-indent-level 4)
+  (setq-default indent-tabs-mode nil)
+#+END_SRC
+#+BEGIN_SRC emacs-lisp
+  (setq-default tab-width 2)
+  (setq python-indent-level 4)
+  (setq perl-indent-level 4)
+  (setq js-indent-level 2)
 #+END_SRC

@@ -12,8 +12,8 @@
 
 ;; ----- ido-work-directory-list -----
 (
- "/Users/lynzt/Downloads/emacs/"
  "/Users/lynzt/coding/lynzt-learning/frontend_masters/js-hard-pars-oo/"
+ "/Users/lynzt/Downloads/emacs/"
  "/Users/lynzt/Downloads/"
  "/Users/lynzt/.emacs.d/"
  "/Users/lynzt/Downloads/facebook-lynzt/"
@@ -27,6 +27,7 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "prototype4.js"
  "temp1.py"
  "prototype3.js"
  "emacs-tut.org"
@@ -36,7 +37,6 @@
  "questions"
  "init.el"
  "03_geocode.py"
- ".emacs-old"
 )
 
 ;; ----- ido-dir-file-cache -----
