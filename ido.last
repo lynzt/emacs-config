@@ -12,9 +12,9 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/Users/lynzt/Downloads/emacs/"
  "/Users/lynzt/coding/lynzt-learning/frontend_masters/js-hard-pars-oo/"
  "/Users/lynzt/Downloads/"
- "/Users/lynzt/Downloads/emacs/"
  "/Users/lynzt/.emacs.d/"
  "/Users/lynzt/Downloads/facebook-lynzt/"
  "/Users/lynzt/coding/medicaid-provider-scraper/scripts/"
@@ -27,9 +27,9 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "temp1.py"
  "prototype3.js"
  "emacs-tut.org"
- "temp1.py"
  "config.org"
  "prototype.js"
  "questions.org"
@@ -41,9 +41,9 @@
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/lynzt/.emacs.d/" (23530 53871 94811 977000) "games/" ".git/" "config.org~" "elpa/" "recentf" "bookmarks" "init.el" "auto-save-list/" "config.el" "#config.org#" "recentf.~1~" "recentf.~2~" "config.org" "smex-items" ".DS_Store" ".mc-lists.el" "ido.last" "snippets/" "../" "./")
+ ("/Users/lynzt/.emacs.d/" (23530 61456 337587 839000) "games/" ".git/" "config.org~" "elpa/" "recentf" "bookmarks" "init.el" "auto-save-list/" "config.el" "#config.org#" "recentf.~1~" "recentf.~2~" "config.org" "smex-items" ".DS_Store" ".mc-lists.el" "ido.last" "snippets/" "../" "./")
 
- ("/Users/lynzt/coding/lynzt-learning/frontend_masters/js-hard-pars-oo/" (23530 56806 496014 414000) "prototype2.js" "../" "./")
+ ("/Users/lynzt/coding/lynzt-learning/frontend_masters/js-hard-pars-oo/" (23530 57012 942409 453000) "prototype3.js" "prototype2.js" "../" "./")
 
  ("/Users/lynzt/Downloads/facebook-lynzt/" (23529 43144 900135 399000) "questions.org~" "photos/" "html/" "index.htm" "questions.org" ".DS_Store" "messages/" "../" "./")
 

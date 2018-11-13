@@ -74,10 +74,13 @@ there's a region, all lines that region covers will be duplicated."
 
 (when window-system (global-hl-line-mode t))
 
-(use-package pretty-mode
-  :ensure t
-  :config
-  (global-pretty-mode t))
+(global-prettify-symbols-mode 1)
+(add-hook
+ 'js-mode-hook
+ (lambda ()
+   (mapc (lambda (pair) (push pair prettify-symbols-alist))
+	'(("function" . #x192)
+	   ))))
 
 (setq-default cursor-type 'bar)
 
@@ -289,3 +292,18 @@ there's a region, all lines that region covers will be duplicated."
 	    (define-key prog-mode-map "(" 'electric-pair)
 	    (define-key prog-mode-map "[" 'electric-pair)
 	    (define-key prog-mode-map "{" 'electric-pair)))
+
+(use-package web-mode
+  :ensure t
+  :config
+  (add_to-list 'auto-mode-alist '("\\.hhtml?\\'".web-mode))
+  (setq web-mode-engines-alist
+	'(("django" . "\\.html\\'")))
+  (setq web-mode-ac-sources-alist
+	'(("css" . (ac-source-css-property))
+	  ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+  (set web-mode-enable-auto-closing t))
+
+(setq default-tab-width 2
+      python-indent-level 4
+      perl-indent-level 4)

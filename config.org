@@ -111,11 +111,20 @@
   (when window-system (global-hl-line-mode t))
 #+END_SRC
 ** change words to symbols
-#+BEGIN_SRC emacs-lisp
+###+BEGIN_SRC emacs-lisp
   (use-package pretty-mode
     :ensure t
     :config
     (global-pretty-mode t))
+##+END_SRC
+#+BEGIN_SRC emacs-lisp
+  (global-prettify-symbols-mode 1)
+  (add-hook
+   'js-mode-hook
+   (lambda ()
+     (mapc (lambda (pair) (push pair prettify-symbols-alist))
+	  '(("function" . #x192)
+	     ))))
 #+END_SRC
 * cursor (bar)
 #+BEGIN_SRC emacs-lisp
@@ -418,4 +427,23 @@
 	      (define-key prog-mode-map "(" 'electric-pair)
 	      (define-key prog-mode-map "[" 'electric-pair)
 	      (define-key prog-mode-map "{" 'electric-pair)))
+#+END_SRC
+* web mode
+#+BEGIN_SRC emacs-lisp
+  (use-package web-mode
+    :ensure t
+    :config
+    (add_to-list 'auto-mode-alist '("\\.hhtml?\\'".web-mode))
+    (setq web-mode-engines-alist
+	  '(("django" . "\\.html\\'")))
+    (setq web-mode-ac-sources-alist
+	  '(("css" . (ac-source-css-property))
+	    ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
+    (set web-mode-enable-auto-closing t))
+#+END_SRC
+* indent levels
+#+BEGIN_SRC emacs-lisp
+  (setq default-tab-width 2
+	python-indent-level 4
+	perl-indent-level 4)
 #+END_SRC
