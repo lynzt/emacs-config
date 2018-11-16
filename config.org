@@ -1,10 +1,10 @@
 * evil mode
-#+BEGIN_SRC emacs-lisp
+##+BEGIN_SRC emacs-lisp
   (use-package evil
     :ensure t
     :init
     (evil-mode 1))
-#+END_SRC
+##+END_SRC
 * auto backups (dir)
 #+BEGIN_SRC emacs-lisp
   (setq backup-by-copying t
@@ -29,7 +29,8 @@
 #+BEGIN_SRC emacs-lisp
   (line-number-mode 1)
   (column-number-mode 1)
-  (add-hook 'prog-mode-hook #'display-line-numbers-mode)
+;  (add-hook 'prog-mode-hook #'display-line-numbers-mode)
+  (setq-default display-line-numbers 'visual)
 #+END_SRC
 ** mark multiple
 #+BEGIN_SRC emacs-lisp
@@ -422,7 +423,7 @@
     (setq yahoo-weather-format "[%(weather) %(temperature)(%(wind-chill))]"))
 #+END_SRC
 * pair / match delimiters
-#+BEGIN_SRC emacs-lisp
+##+BEGIN_SRC emacs-lisp
   (defun electric-pair()
     (interactive)
     (if (eolp) (let (parens-requre-spaces) (insert-pair)) (self-insert-command 1)))
@@ -433,7 +434,7 @@
 	      (define-key prog-mode-map "(" 'electric-pair)
 	      (define-key prog-mode-map "[" 'electric-pair)
 	      (define-key prog-mode-map "{" 'electric-pair)))
-#+END_SRC
+##+END_SRC
 * web mode
 ##+BEGIN_SRC emacs-lisp
   (use-package web-mode
@@ -457,4 +458,16 @@
   (setq python-indent-level 4)
   (setq perl-indent-level 4)
   (setq js-indent-level 2)
+#+END_SRC
+* emmet
+#+BEGIN_SRC emacs-lisp
+  (use-package emmet-mode
+    :ensure t
+    :commands emmet-mode
+    :init
+    (setq emmet-indentation 2)
+    (setq emmet-move-cursor-between-quotes t)
+    :config
+    (add-hook 'sgml-mode-hook 'emmet-mode)
+    (add-hook 'css-mode-hook 'emmet-mode))
 #+END_SRC

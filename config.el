@@ -1,8 +1,3 @@
-(use-package evil
-  :ensure t
-  :init
-  (evil-mode 1))
-
 (setq backup-by-copying t
 backup-directory-alist '(("." . "~/.backups/emacs/"))
 delete-old-versions t
@@ -16,8 +11,9 @@ create-lockfiles nil)
 (global-subword-mode 1)
 
 (line-number-mode 1)
-(column-number-mode 1)
-(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+  (column-number-mode 1)
+;  (add-hook 'prog-mode-hook #'display-line-numbers-mode)
+  (setq-default display-line-numbers 'visual)
 
 (use-package mark-multiple
   :ensure t
@@ -286,20 +282,19 @@ there's a region, all lines that region covers will be duplicated."
   (setq yahoo-weather-temperture-format "%d")
   (setq yahoo-weather-format "[%(weather) %(temperature)(%(wind-chill))]"))
 
-(defun electric-pair()
-  (interactive)
-  (if (eolp) (let (parens-requre-spaces) (insert-pair)) (self-insert-command 1)))
-(add-hook 'prog-mode-hook
-	  (lambda ()
-	    (define-key prog-mode-map "\"" 'electric-pair)
-	    (define-key prog-mode-map "\'" 'electric-pair)
-	    (define-key prog-mode-map "(" 'electric-pair)
-	    (define-key prog-mode-map "[" 'electric-pair)
-	    (define-key prog-mode-map "{" 'electric-pair)))
-
 (setq-default indent-tabs-mode nil)
 
 (setq-default tab-width 2)
 (setq python-indent-level 4)
 (setq perl-indent-level 4)
 (setq js-indent-level 2)
+
+(use-package emmet-mode
+  :ensure t
+  :commands emmet-mode
+  :init
+  (setq emmet-indentation 2)
+  (setq emmet-move-cursor-between-quotes t)
+  :config
+  (add-hook 'sgml-mode-hook 'emmet-mode)
+  (add-hook 'css-mode-hook 'emmet-mode))
