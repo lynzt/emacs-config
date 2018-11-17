@@ -18,19 +18,7 @@
   (use-package evil-nerd-commenter
     :ensure t
     :bind
-    ("M-;" . evilnc-comment-or-uncomment-lines)
-    :config
-    (evil-leader/set-key
-     ":" 'evilnc-comment-or-uncomment-lines
-     "h" 'evilnc-comment-operator))
-#+END_SRC
-** evil search highlight
-#+BEGIN_SRC emacs-lisp
-  (use-package evil-search-highlight-persist
-    :ensure t
-    :init
-    (global-evil-search-highlight-persist t)
-    (setq evil-search-highlight-string-min-length 3))
+    ("M-;" . evilnc-comment-or-uncomment-lines))
 #+END_SRC
 * auto backups (dir)
 #+BEGIN_SRC emacs-lisp
@@ -49,9 +37,9 @@
 #+END_SRC
 * minor settings
 ** subword
-#+BEGIN_SRC emacs-lisp
+##+BEGIN_SRC emacs-lisp
   (global-subword-mode 1)
-#+END_SRC
+##+END_SRC
 ** show lines and column numbers
 #+BEGIN_SRC emacs-lisp
   (line-number-mode 1)
@@ -120,6 +108,7 @@
     (require 'exwm-config)
     (exwm-config-default))
 #+END_SRC
+
 * Which Key
 #+BEGIN_SRC emacs-lisp
   (use-package which-key
@@ -207,7 +196,8 @@
     (diminish 'global-whitespace-mode)
     (diminish 'zoom-mode)
     (diminish 'yas-minor-mode)
-    (diminish 'subword-mode))
+    ;; (diminish 'subword-mode)
+  )
 #+END_SRC
 * IDO
 ** enable ido mode
@@ -405,12 +395,21 @@
     (zoom-mode t)) 
 #+END_SRC
 * ztree
-#+BEGIN_SRC emacs-lisp
+##+BEGIN_SRC emacs-lisp
   (use-package ztree
     :ensure t
     :bind* (("C-c k" . ztree-dir))
     :init
     (setq ztree-dir-move-focus t))
+#+END_SRC
+* neotree
+#+BEGIN_SRC emacs-lisp
+  (use-package neotree
+    :ensure t
+    :bind ("C-c k" . neotree)
+    :config
+    (setq neo-dont-be-alone t
+          neo-theme 'nerd))
 #+END_SRC
 * show invisibles
 #+BEGIN_SRC emacs-lisp

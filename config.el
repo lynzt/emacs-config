@@ -11,17 +11,7 @@
 (use-package evil-nerd-commenter
   :ensure t
   :bind
-  ("M-;" . evilnc-comment-or-uncomment-lines)
-  :config
-  (evil-leader/set-key
-   ":" 'evilnc-comment-or-uncomment-lines
-   "h" 'evilnc-comment-operator))
-
-(use-package evil-search-highlight-persist
-  :ensure t
-  :init
-  (global-evil-search-highlight-persist t)
-  (setq evil-search-highlight-string-min-length 3))
+  ("M-;" . evilnc-comment-or-uncomment-lines))
 
 (setq backup-by-copying t
 backup-directory-alist '(("." . "~/.backups/emacs/"))
@@ -32,8 +22,6 @@ version-control t
 create-lockfiles nil)
 
 (when window-system (set-frame-size (selected-frame) 120 60))
-
-(global-subword-mode 1)
 
 (line-number-mode 1)
   (column-number-mode 1)
@@ -137,7 +125,8 @@ there's a region, all lines that region covers will be duplicated."
   (diminish 'global-whitespace-mode)
   (diminish 'zoom-mode)
   (diminish 'yas-minor-mode)
-  (diminish 'subword-mode))
+  ;; (diminish 'subword-mode)
+)
 
 (setq ido-enable-flex-matching nil)
 (setq ido-create-new-buffer 'always)
@@ -272,11 +261,12 @@ there's a region, all lines that region covers will be duplicated."
   :init
   (zoom-mode t))
 
-(use-package ztree
+(use-package neotree
   :ensure t
-  :bind* (("C-c k" . ztree-dir))
-  :init
-  (setq ztree-dir-move-focus t))
+  :bind ("C-c k" . neotree)
+  :config
+  (setq neo-dont-be-alone t
+        neo-theme 'nerd))
 
 (global-whitespace-mode t)
 (setq whitespace-display-mappings
