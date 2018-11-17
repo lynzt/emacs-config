@@ -23,12 +23,12 @@
   ("M-;" . evilnc-comment-or-uncomment-lines))
 
 (setq backup-by-copying t
-      backup-directory-alist '(("." . "~/.backups/emacs/"))
-      delete-old-versions t
-      kept-new-versions 6
-      kept-old-versions 2
-      version-control t
-      create-lockfiles nil)
+backup-directory-alist '(("." . "~/.backups/emacs/"))
+delete-old-versions t
+kept-new-versions 6
+kept-old-versions 2
+version-control t
+create-lockfiles nil)
 
 (when window-system (set-frame-size (selected-frame) 120 60))
 
@@ -58,12 +58,12 @@ there's a region, all lines that region covers will be duplicated."
 	(exchange-point-and-mark))
     (setq end (line-end-position))
     (let ((region (buffer-substring-no-properties beg end)))
-      (dotimes (i arg)
+(dotimes (i arg)
 	(goto-char end)
 	(newline)
 	(insert region)
 	(setq end (point)))
-      (goto-char (+ origin (* (length region) arg) arg)))))
+(goto-char (+ origin (* (length region) arg) arg)))))
 (global-set-key (kbd "C-c d") 'duplicate-current-line-or-region)
 
 (use-package org-bullets
@@ -117,13 +117,6 @@ there's a region, all lines that region covers will be duplicated."
 (setq inhibit-startup-screen t)
 (setq make-backup-file nil)
 (setq auto-save-default nil)
-
-(use-package spaceline
-  :ensure t
-  :config
-  (require 'spaceline-config)
-  (setq powerline-default-separator (quote arrow))
-  (spaceline-spacemacs-theme))
 
 (use-package diminish
   :ensure t
@@ -316,3 +309,15 @@ there's a region, all lines that region covers will be duplicated."
   :config
   (setq neo-dont-be-alone t
         neo-theme 'icons))
+
+(use-package sml-mode
+  :ensure t
+  :config
+  (setq sml/theme 'dark)
+  (setq evil-normal-state-tag   (propertize " <N> " 'face '((:background "DarkGoldenrod2" :foreground "black")))
+          evil-emacs-state-tag    (propertize " <E> " 'face '((:background "SkyBlue2"       :foreground "black")))
+          evil-insert-state-tag   (propertize " <I> " 'face '((:background "chartreuse3"    :foreground "black")))
+          evil-replace-state-tag  (propertize " <R> " 'face '((:background "chocolate"      :foreground "black")))
+          evil-motion-state-tag   (propertize " <M> " 'face '((:background "plum3"          :foreground "black")))
+          evil-visual-state-tag   (propertize " <V> " 'face '((:background "gray"           :foreground "black")))
+          evil-operator-state-tag (propertize " <O> " 'face '((:background "sandy brown"    :foreground "black")))))
