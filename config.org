@@ -31,6 +31,11 @@
     :bind
     ("M-;" . evilnc-comment-or-uncomment-lines))
 #+END_SRC
+** evil modes cursor styles
+#+BEGIN_SRC emacs-lisp
+  (setq evil-insert-state-cursor '(bar "#ed9421")
+        evil-normal-state-cursor '(box "purple"))
+#+END_SRC
 * auto backups (dir)
 #+BEGIN_SRC emacs-lisp
   (setq backup-by-copying t
@@ -165,7 +170,7 @@
   (setq-default cursor-type 'bar)
 #+END_SRC
 * cursor color
-#+BEGIN_SRC emacs-lisp
+##+BEGIN_SRC emacs-lisp
   (set-cursor-color "#ed9421")
 #+END_SRC
 * emacs gui
@@ -464,18 +469,20 @@
 	      (define-key prog-mode-map "{" 'electric-pair)))
 ##+END_SRC
 * web mode
-##+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp
   (use-package web-mode
     :ensure t
+    :mode ("\\.hbs\\'"
+           "\\.jsx\\'"
+           "\\.vue\\'"
+           "/\\([Vv]iews\\|[Hh]tml\\|[Tt]emplates\\)/.*\\.php\\'"
+           "\\.blade\\.php\\'")
     :config
-    (add_to-list 'auto-mode-alist '("\\.hhtml?\\'".web-mode))
-    (setq web-mode-engines-alist
-	  '(("django" . "\\.html\\'")))
-    (setq web-mode-ac-sources-alist
-	  '(("css" . (ac-source-css-property))
-	    ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
-    (set web-mode-enable-auto-closing t))
-##+END_SRC
+    (setq sgml-basic-offset 2)
+    (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+#+END_SRC
 * indent levels
 * indent no tabs
 #+BEGIN_SRC emacs-lisp

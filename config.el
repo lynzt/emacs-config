@@ -22,6 +22,9 @@
   :bind
   ("M-;" . evilnc-comment-or-uncomment-lines))
 
+(setq evil-insert-state-cursor '(bar "#ed9421")
+      evil-normal-state-cursor '(box "purple"))
+
 (setq backup-by-copying t
 backup-directory-alist '(("." . "~/.backups/emacs/"))
 delete-old-versions t
@@ -105,8 +108,6 @@ there's a region, all lines that region covers will be duplicated."
 	   ))))
 
 (setq-default cursor-type 'bar)
-
-(set-cursor-color "#ed9421")
 
 (tool-bar-mode -1)
 
@@ -282,6 +283,19 @@ there's a region, all lines that region covers will be duplicated."
     (global-set-key [(meta shift g)] 'mc/mark-all-like-this)))
 
 (fset 'yes-or-no-p 'y-or-n-p)
+
+(use-package web-mode
+  :ensure t
+  :mode ("\\.hbs\\'"
+         "\\.jsx\\'"
+         "\\.vue\\'"
+         "/\\([Vv]iews\\|[Hh]tml\\|[Tt]emplates\\)/.*\\.php\\'"
+         "\\.blade\\.php\\'")
+  :config
+  (setq sgml-basic-offset 2)
+  (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+  (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+  (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
 (setq-default indent-tabs-mode nil)
 
