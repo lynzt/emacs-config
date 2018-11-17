@@ -17,6 +17,12 @@
    ":" 'evilnc-comment-or-uncomment-lines
    "h" 'evilnc-comment-operator))
 
+(use-package evil-search-highlight-persist
+  :ensure t
+  :init
+  (global-evil-search-highlight-persist t)
+  (setq evil-search-highlight-string-min-length 3))
+
 (setq backup-by-copying t
 backup-directory-alist '(("." . "~/.backups/emacs/"))
 delete-old-versions t
@@ -291,15 +297,6 @@ there's a region, all lines that region covers will be duplicated."
     (global-set-key [(meta shift g)] 'mc/mark-all-like-this)))
 
 (fset 'yes-or-no-p 'y-or-n-p)
-
-(use-package yahoo-weather
-  :ensure t
-  :init
-  (yahoo-weather-mode 1)
-  (setq yahoo-weather-location "55407")
-  (setq yahoo-weather-use-F t)
-  (setq yahoo-weather-temperture-format "%d")
-  (setq yahoo-weather-format "[%(weather) %(temperature)(%(wind-chill))]"))
 
 (setq-default indent-tabs-mode nil)
 

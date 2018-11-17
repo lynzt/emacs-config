@@ -24,6 +24,14 @@
      ":" 'evilnc-comment-or-uncomment-lines
      "h" 'evilnc-comment-operator))
 #+END_SRC
+** evil search highlight
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-search-highlight-persist
+    :ensure t
+    :init
+    (global-evil-search-highlight-persist t)
+    (setq evil-search-highlight-string-min-length 3))
+#+END_SRC
 * auto backups (dir)
 #+BEGIN_SRC emacs-lisp
   (setq backup-by-copying t
@@ -431,7 +439,7 @@
   (fset 'yes-or-no-p 'y-or-n-p)
 #+END_SRC
 * yahoo weather
-#+BEGIN_SRC emacs-lisp
+##+BEGIN_SRC emacs-lisp
   (use-package yahoo-weather
     :ensure t
     :init
@@ -440,7 +448,7 @@
     (setq yahoo-weather-use-F t)
     (setq yahoo-weather-temperture-format "%d")
     (setq yahoo-weather-format "[%(weather) %(temperature)(%(wind-chill))]"))
-#+END_SRC
+##+END_SRC
 * pair / match delimiters
 ##+BEGIN_SRC emacs-lisp
   (defun electric-pair()
