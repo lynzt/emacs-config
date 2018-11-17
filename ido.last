@@ -4,7 +4,7 @@
 (
  ("/Users/lynzt/Downloads/" . "vim old/")
  ("/Users/lynzt/coding/medicaid-provider-scraper/" . "scripts/")
- ("/Users/lynzt/" . "Downloads/")
+ ("/Users/lynzt/" . ".emacs.d/")
  ("/Users/lynzt/coding/lynzt-learning/frontend_masters/" . "intro-to-react-4/")
  ("/Users/lynzt/coding/lynzt-learning/" . "frontend_masters/")
  ("/Users/lynzt/coding/" . "lynzt-learning/")
@@ -12,13 +12,13 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/Users/lynzt/.emacs.d/"
  "/Users/lynzt/Downloads/vims/"
  "/Users/lynzt/"
  "/Users/lynzt/Downloads/"
  "/Users/lynzt/coding/lynzt-learning/frontend_masters/intro-to-react-4/"
  "/Users/lynzt/Downloads/emacs/"
  "/Users/lynzt/coding/lynzt-learning/frontend_masters/js-hard-pars-oo/"
- "/Users/lynzt/.emacs.d/"
  "/Users/lynzt/Downloads/facebook-lynzt/"
  "/Users/lynzt/coding/medicaid-provider-scraper/scripts/"
  "/Users/lynzt/coding/emacs-tut/"
@@ -29,6 +29,7 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "config.org"
  "notes.org"
  "need-in-editor.org"
  ".vimrc"
@@ -38,16 +39,15 @@
  "prototype2.js"
  "oop1.js"
  "temp1.py"
- "prototype45.js"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/lynzt/.emacs.d/" (23535 31112 122321 201000) "games/" ".git/" "config.org~" "elpa/" "recentf" "bookmarks" "init.el" "auto-save-list/" "config.el" "#config.org#" "recentf.~1~" "recentf.~2~" "config.org" "smex-items" ".DS_Store" ".mc-lists.el" "ido.last" "snippets/" "../" "./")
+ ("/Users/lynzt/.emacs.d/" (23536 2351 284572 473000) "games/" ".git/" "config.org~" "elpa/" "recentf" "bookmarks" "init.el" "auto-save-list/" "config.el" "#config.org#" "recentf.~1~" "recentf.~2~" "config.org" "smex-items" ".DS_Store" ".mc-lists.el" "ido.last" "snippets/" "../" "./")
+
+ ("/Users/lynzt/" (23535 31991 327019 80000) ".viminfo" ".bash_history" ".gitconfig" ".cache/" "Downloads/" ".oh-my-zsh/" ".dvdcss/" ".bash_profile" ".vscode/" "codingx/" "vids/" "Documents/" ".emacs.d-sm-ivy/" ".npm/" ".backups/" "coding/" ".Trash/" "Dropbox/" "Applications/" ".vimrc" "Movies/" ".ssh/" ".dbeaver-drivers/" "postgres_data/" ".dropbox/" "Public/" ".spacemacs.d.bak/" ".zcompdump-lynzt’s mbp-5.3" ".cups/" ".gitignore_global" ".pgadmin/" ".octave_hist" ".emacs.d/" ".oracle_jre_usage/" "temp1.js" "Library/" "Desktop/" ".zsh_history" "scanned/" ".temp1.js.swp" ".emacs.d-spacemacs/" ".atom/" ".zcompdump-MacBook Pro (2)-5.3" "Pictures/" ".psql_history" ".local/" ".zcompdump-MacBook Pro-5.3" ".zshrc" ".subversion/" ".netrc" ".vagrant.d/" "config.fish" ".hgignore_global" ".stCommitMsg" "test/" ".CFUserTextEncoding" "VirtualBox VMs/" ".gnupg/" ".DS_Store" ".vim/" "tutorial" "octave-workspace" ".node-gyp/" ".gnupg_pre_2.1/" ".docker/" ".gitkraken/" "Music/" ".config/" ".eclipse/" "scrivener/" ".quokka/" ".dbeaver4/" "../" "./")
 
  ("/Users/lynzt/Downloads/vim old/" (23534 1140 98170 391000) ".vimrc" "../" "./")
-
- ("/Users/lynzt/" (23534 46981 185825 299000) ".viminfo" ".bash_history" ".gitconfig" ".cache/" "Downloads/" ".oh-my-zsh/" ".dvdcss/" ".bash_profile" ".vscode/" "codingx/" "vids/" "Documents/" ".npm/" ".backups/" "coding/" ".Trash/" "Dropbox/" ".emacs~" "Applications/" ".vimrc" "Movies/" ".ssh/" ".dbeaver-drivers/" "postgres_data/" ".dropbox/" "Public/" ".zcompdump-lynzt’s mbp-5.3" ".cups/" ".gitignore_global" ".pgadmin/" ".octave_hist" ".emacs.d/" ".oracle_jre_usage/" "Library/" "Desktop/" ".zsh_history" "scanned/" ".atom/" ".zcompdump-MacBook Pro (2)-5.3" "Pictures/" ".psql_history" ".local/" ".zcompdump-MacBook Pro-5.3" ".zshrc" ".subversion/" ".netrc" ".vagrant.d/" "config.fish" ".hgignore_global" ".stCommitMsg" "test/" ".CFUserTextEncoding" "VirtualBox VMs/" ".gnupg/" ".DS_Store" ".vim/" "tutorial" "octave-workspace" ".node-gyp/" ".gnupg_pre_2.1/" ".docker/" ".gitkraken/" "Music/" ".config/" ".eclipse/" "scrivener/" ".quokka/" ".dbeaver4/" "../" "./")
 
  ("/Users/lynzt/Downloads/vims/" (23534 47991 553969 310000) "notes.org" "../" "./")
 

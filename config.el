@@ -1,7 +1,16 @@
 (use-package evil
   :ensure t
   :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
+  :config
   (evil-mode 1))
+
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init))
 
 (use-package evil-visualstar
   :ensure t
@@ -14,12 +23,12 @@
   ("M-;" . evilnc-comment-or-uncomment-lines))
 
 (setq backup-by-copying t
-backup-directory-alist '(("." . "~/.backups/emacs/"))
-delete-old-versions t
-kept-new-versions 6
-kept-old-versions 2
-version-control t
-create-lockfiles nil)
+      backup-directory-alist '(("." . "~/.backups/emacs/"))
+      delete-old-versions t
+      kept-new-versions 6
+      kept-old-versions 2
+      version-control t
+      create-lockfiles nil)
 
 (when window-system (set-frame-size (selected-frame) 120 60))
 
@@ -49,12 +58,12 @@ there's a region, all lines that region covers will be duplicated."
 	(exchange-point-and-mark))
     (setq end (line-end-position))
     (let ((region (buffer-substring-no-properties beg end)))
-(dotimes (i arg)
+      (dotimes (i arg)
 	(goto-char end)
 	(newline)
 	(insert region)
 	(setq end (point)))
-(goto-char (+ origin (* (length region) arg) arg)))))
+      (goto-char (+ origin (* (length region) arg) arg)))))
 (global-set-key (kbd "C-c d") 'duplicate-current-line-or-region)
 
 (use-package org-bullets
@@ -261,13 +270,6 @@ there's a region, all lines that region covers will be duplicated."
   :init
   (zoom-mode t))
 
-(use-package neotree
-  :ensure t
-  :bind ("C-c k" . neotree)
-  :config
-  (setq neo-dont-be-alone t
-        neo-theme 'nerd))
-
 (global-whitespace-mode t)
 (setq whitespace-display-mappings
   ;; all numbers are Unicode codepoint in decimal. ⁖ (insert-char 182 1)
@@ -304,3 +306,13 @@ there's a region, all lines that region covers will be duplicated."
   :config
   (add-hook 'sgml-mode-hook 'emmet-mode)
   (add-hook 'css-mode-hook 'emmet-mode))
+
+(use-package all-the-icons
+  :ensure t)
+
+(use-package neotree
+  :ensure t
+  :bind ("C-c k" . neotree)
+  :config
+  (setq neo-dont-be-alone t
+        neo-theme 'icons))
