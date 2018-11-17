@@ -22,8 +22,10 @@
   :bind
   ("M-;" . evilnc-comment-or-uncomment-lines))
 
-(setq evil-insert-state-cursor '(bar "#ed9421")
-      evil-normal-state-cursor '(box "purple"))
+(setq evil-insert-state-cursor '(bar "#a6e22e")
+      evil-normal-state-cursor '(box "#fd971f")
+      evil-visual-state-cursor '(box "#f92672")
+)
 
 (setq backup-by-copying t
 backup-directory-alist '(("." . "~/.backups/emacs/"))
@@ -328,10 +330,10 @@ there's a region, all lines that region covers will be duplicated."
   :ensure t
   :config
   (setq sml/theme 'dark)
-  (setq evil-normal-state-tag   (propertize " <N> " 'face '((:background "DarkGoldenrod2" :foreground "black")))
+  (setq evil-normal-state-tag   (propertize " <N> " 'face '((:background "#fd971f" :foreground "black")))
           evil-emacs-state-tag    (propertize " <E> " 'face '((:background "SkyBlue2"       :foreground "black")))
-          evil-insert-state-tag   (propertize " <I> " 'face '((:background "chartreuse3"    :foreground "black")))
+          evil-insert-state-tag   (propertize " <I> " 'face '((:background "#a6e22e"    :foreground "black")))
           evil-replace-state-tag  (propertize " <R> " 'face '((:background "chocolate"      :foreground "black")))
           evil-motion-state-tag   (propertize " <M> " 'face '((:background "plum3"          :foreground "black")))
-          evil-visual-state-tag   (propertize " <V> " 'face '((:background "gray"           :foreground "black")))
+          evil-visual-state-tag   (propertize " <V> " 'face '((:background "#f92672"           :foreground "black")))
           evil-operator-state-tag (propertize " <O> " 'face '((:background "sandy brown"    :foreground "black")))))
