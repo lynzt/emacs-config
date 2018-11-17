@@ -1,10 +1,29 @@
 * evil mode
-##+BEGIN_SRC emacs-lisp
+** evil
+#+BEGIN_SRC emacs-lisp
   (use-package evil
     :ensure t
     :init
     (evil-mode 1))
-##+END_SRC
+#+END_SRC
+** evil visualstar
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-visualstar
+    :ensure t
+    :init
+    (global-evil-visualstar-mode 1))
+#+END_SRC
+** evil-nerd-commenter
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-nerd-commenter
+    :ensure t
+    :bind
+    ("M-;" . evilnc-comment-or-uncomment-lines)
+    :config
+    (evil-leader/set-key
+     ":" 'evilnc-comment-or-uncomment-lines
+     "h" 'evilnc-comment-operator))
+#+END_SRC
 * auto backups (dir)
 #+BEGIN_SRC emacs-lisp
   (setq backup-by-copying t

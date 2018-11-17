@@ -1,3 +1,22 @@
+(use-package evil
+  :ensure t
+  :init
+  (evil-mode 1))
+
+(use-package evil-visualstar
+  :ensure t
+  :init
+  (global-evil-visualstar-mode 1))
+
+(use-package evil-nerd-commenter
+  :ensure t
+  :bind
+  ("M-;" . evilnc-comment-or-uncomment-lines)
+  :config
+  (evil-leader/set-key
+   ":" 'evilnc-comment-or-uncomment-lines
+   "h" 'evilnc-comment-operator))
+
 (setq backup-by-copying t
 backup-directory-alist '(("." . "~/.backups/emacs/"))
 delete-old-versions t
