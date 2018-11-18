@@ -239,8 +239,8 @@ there's a region, all lines that region covers will be duplicated."
 
 (use-package git-gutter
   :ensure t
-  :config (global-git-gutter-mode)
   :init
+  (global-git-gutter-mode 1)
   (progn
     (setq git-gutter:separator-sign " "
 	  git-gutter:lighter " GG"))
@@ -260,6 +260,9 @@ there's a region, all lines that region covers will be duplicated."
 (use-package docker
   :ensure t
   :bind ("C-c C-d" . docker))
+
+(use-package dockerfile-mode
+  :ensure t)
 
 (use-package zoom
   :ensure t
@@ -337,3 +340,8 @@ there's a region, all lines that region covers will be duplicated."
           evil-motion-state-tag   (propertize " <M> " 'face '((:background "plum3"          :foreground "black")))
           evil-visual-state-tag   (propertize " <V> " 'face '((:background "#f92672"           :foreground "black")))
           evil-operator-state-tag (propertize " <O> " 'face '((:background "sandy brown"    :foreground "black")))))
+
+(use-package prettier-js
+  :ensure t
+  :config
+  (add-hook 'web-mode-hook 'prettier-js-mode))

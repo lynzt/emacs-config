@@ -31,7 +31,8 @@
     :bind
     ("M-;" . evilnc-comment-or-uncomment-lines))
 #+END_SRC
-** evil modes cursor styles (monokai colors)i  
+** evil modes cursor styles (monokai colors
+*** https://emacs.stackexchange.com/questions/7403/evil-cursor-change-by-state
 #+BEGIN_SRC emacs-lisp
   (setq evil-insert-state-cursor '(bar "#a6e22e")
         evil-normal-state-cursor '(box "#fd971f")
@@ -381,8 +382,8 @@
 #+BEGIN_SRC emacs-lisp
   (use-package git-gutter
     :ensure t
-    :config (global-git-gutter-mode)
     :init
+    (global-git-gutter-mode 1)
     (progn
       (setq git-gutter:separator-sign " "
 	    git-gutter:lighter " GG"))
@@ -399,11 +400,24 @@
 	   ("C-x v =" . git-gutter:popup-hunk)
 	   ("C-x v r" . git-gutter:revert-hunk)))
 #+END_SRC
+* git gutter fringe
+##+BEGIN_SRC emacs-lisp
+    (use-package git-gutter-fringe
+      :ensure t
+      :init
+      (global-git-gutter-mode 1)
+      :config
+      (set-face-forground 'git-gutter-fr:added "blue"))
+#+END_SRC
 * docker
 #+BEGIN_SRC emacs-lisp
   (use-package docker
     :ensure t
     :bind ("C-c C-d" . docker))
+#+END_SRC
+#+BEGIN_SRC emacs-lisp
+  (use-package dockerfile-mode
+    :ensure t)
 #+END_SRC
 * zoom
 #+BEGIN_SRC emacs-lisp
@@ -536,4 +550,11 @@
             evil-motion-state-tag   (propertize " <M> " 'face '((:background "plum3"          :foreground "black")))
             evil-visual-state-tag   (propertize " <V> " 'face '((:background "#f92672"           :foreground "black")))
             evil-operator-state-tag (propertize " <O> " 'face '((:background "sandy brown"    :foreground "black")))))
+#+END_SRC
+* prettier
+#+BEGIN_SRC emacs-lisp
+  (use-package prettier-js
+    :ensure t
+    :config
+    (add-hook 'web-mode-hook 'prettier-js-mode))
 #+END_SRC
