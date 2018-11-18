@@ -22,9 +22,11 @@
   :bind
   ("M-;" . evilnc-comment-or-uncomment-lines))
 
-(setq evil-insert-state-cursor '(bar "#a6e22e")
+(setq evil-insert-state-cursor '((bar . 3) "#a6e22e")
       evil-normal-state-cursor '(box "#fd971f")
       evil-visual-state-cursor '(box "#f92672")
+      evil-replace-state-cursor '(hollow "#a6e22e")
+      evil-operator-state-cursor '((hbar . 4) "#66d9ef")
 )
 
 (setq backup-by-copying t
@@ -336,10 +338,10 @@ there's a region, all lines that region covers will be duplicated."
   (setq evil-normal-state-tag   (propertize " <N> " 'face '((:background "#fd971f" :foreground "black")))
           evil-emacs-state-tag    (propertize " <E> " 'face '((:background "SkyBlue2"       :foreground "black")))
           evil-insert-state-tag   (propertize " <I> " 'face '((:background "#a6e22e"    :foreground "black")))
-          evil-replace-state-tag  (propertize " <R> " 'face '((:background "chocolate"      :foreground "black")))
+          evil-replace-state-tag  (propertize " <R> " 'face '((:background "#a6e22e"      :foreground "black")))
           evil-motion-state-tag   (propertize " <M> " 'face '((:background "plum3"          :foreground "black")))
           evil-visual-state-tag   (propertize " <V> " 'face '((:background "#f92672"           :foreground "black")))
-          evil-operator-state-tag (propertize " <O> " 'face '((:background "sandy brown"    :foreground "black")))))
+          evil-operator-state-tag (propertize " <O> " 'face '((:background "#66d9ef"    :foreground "black")))))
 
 (use-package prettier-js
   :ensure t
