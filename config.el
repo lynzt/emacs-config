@@ -163,6 +163,8 @@ there's a region, all lines that region covers will be duplicated."
 
 (global-set-key (kbd "C-x b") 'ibuffer)
 
+(global-auto-revert-mode t)
+
 (use-package avy
   :ensure t
   :bind

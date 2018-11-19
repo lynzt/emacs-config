@@ -265,6 +265,10 @@
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "C-x b") 'ibuffer)
 #+END_SRC
+** auto refresh buffer when files change on disk
+#+BEGIN_SRC emacs-lisp
+  (global-auto-revert-mode t)
+#+END_SRC
 * helm
 ** use helm
 ##+BEGIN_SRC emacs-lisp
@@ -508,10 +512,10 @@
     :ensure t)
 #+END_SRC
 * indent levels
-* indent no tabs
 #+BEGIN_SRC emacs-lisp
   (setq-default indent-tabs-mode nil)
 #+END_SRC
+* indent no tabs
 #+BEGIN_SRC emacs-lisp
   (setq-default tab-width 2)
   (setq python-indent-level 4)
