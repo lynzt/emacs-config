@@ -132,6 +132,9 @@ there's a region, all lines that region covers will be duplicated."
   (diminish 'global-whitespace-mode)
   (diminish 'zoom-mode)
   (diminish 'yas-minor-mode)
+  (diminish 'undo-tree-mode)
+  (diminish 'prettier-js-mode)
+  (diminish 'git-gutter-mode)
   ;; (diminish 'subword-mode)
 )
 
@@ -302,13 +305,14 @@ there's a region, all lines that region covers will be duplicated."
          "/\\([Vv]iews\\|[Hh]tml\\|[Tt]emplates\\)/.*\\.php\\'"
          "\\.blade\\.php\\'")
   :config
-  (setq sgml-basic-offset 2)
-  (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
-  (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
-  (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
-
-(use-package rjsx-mode
-  :ensure t)
+  (setq
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-enable-auto-closing t
+   web-mode-enable-auto-opening t
+   web-mode-enable-auto-pairing t
+   web-mode-enable-auto-indentation t))
 
 (setq-default indent-tabs-mode nil)
 

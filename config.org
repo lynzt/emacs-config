@@ -217,6 +217,9 @@
     (diminish 'global-whitespace-mode)
     (diminish 'zoom-mode)
     (diminish 'yas-minor-mode)
+    (diminish 'undo-tree-mode)
+    (diminish 'prettier-js-mode)
+    (diminish 'git-gutter-mode)
     ;; (diminish 'subword-mode)
   )
 #+END_SRC
@@ -501,15 +504,14 @@
            "/\\([Vv]iews\\|[Hh]tml\\|[Tt]emplates\\)/.*\\.php\\'"
            "\\.blade\\.php\\'")
     :config
-    (setq sgml-basic-offset 2)
-    (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
-    (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
-    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
-#+END_SRC
-* react mode
-#+BEGIN_SRC emacs-lisp
-  (use-package rjsx-mode
-    :ensure t)
+    (setq
+     web-mode-markup-indent-offset 2
+     web-mode-css-indent-offset 2
+     web-mode-code-indent-offset 2
+     web-mode-enable-auto-closing t
+     web-mode-enable-auto-opening t
+     web-mode-enable-auto-pairing t
+     web-mode-enable-auto-indentation t))
 #+END_SRC
 * indent levels
 #+BEGIN_SRC emacs-lisp
