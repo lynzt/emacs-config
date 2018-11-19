@@ -196,7 +196,7 @@ there's a region, all lines that region covers will be duplicated."
   (setq switch-window-threshold 2)
   (setq switch-window-shortcut-style 'qwerty)
   (setq switch-window-qwerty-shortcuts
-	'("a" "s" "d" "f" "j" "k" "l"))
+  '("a" "s" "d" "f" "w" "e" "r"))
   :bind
   ([remap other-window] . switch-window))
 
@@ -238,26 +238,6 @@ there's a region, all lines that region covers will be duplicated."
 (use-package magit
   :ensure t
   :bind ("C-x g" . magit-status))
-
-(use-package git-gutter
-  :ensure t
-  :init
-  (global-git-gutter-mode 1)
-  (progn
-    (setq git-gutter:separator-sign " "
-	  git-gutter:lighter " GG"))
-  :config
-  (progn
-    (set-face-background 'git-gutter:deleted "#990A1B")
-    (set-face-foreground 'git-gutter:deleted "#990A1B")
-    (set-face-background 'git-gutter:modified "#00736F")
-    (set-face-foreground 'git-gutter:modified "#00736F")
-    (set-face-background 'git-gutter:added "#546E00")
-    (set-face-foreground 'git-gutter:added "#546E00"))
-  :bind (("C-x p" . git-gutter:previous-hunk)
-	 ("C-x n" . git-gutter:next-hunk)
-	 ("C-x v =" . git-gutter:popup-hunk)
-	 ("C-x v r" . git-gutter:revert-hunk)))
 
 (use-package docker
   :ensure t
