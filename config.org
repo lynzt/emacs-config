@@ -381,7 +381,7 @@
     :bind ("C-x g" . magit-status))
 #+END_SRC
 ** git gutter
-##+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp
   (use-package git-gutter
     :ensure t
     :init
@@ -491,6 +491,7 @@
   (use-package web-mode
     :ensure t
     :mode ("\\.hbs\\'"
+           "\\.js\\'"
            "\\.jsx\\'"
            "\\.vue\\'"
            "/\\([Vv]iews\\|[Hh]tml\\|[Tt]emplates\\)/.*\\.php\\'"
@@ -500,6 +501,11 @@
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+#+END_SRC
+* react mode
+#+BEGIN_SRC emacs-lisp
+  (use-package rjsx-mode
+    :ensure t)
 #+END_SRC
 * indent levels
 * indent no tabs

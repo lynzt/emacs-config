@@ -28,7 +28,7 @@
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
-    (dockerfile-mode prettier-js sml-mode evil-collection evil-nerd-commenter evil-visualstar evil all-the-fonts all-the-icons evil-matchit emmet-mode web-mode yahoo-weather zoom docker magit yasnippet-snippets yasnippet pretty-mode expand-region swiper popup-kill-ring dashboard rainbow-delimiters emacs-lisp exwm diminish spaceline switch-window rainbow-mode avy helm-config smex ido-vertical-mode ido-verticle-mode beacon spacemacs-theme zenburn-theme which-key use-package try projectile org neotree monokai-theme monokai-alt-theme molokai-theme company clojure-mode-extra-font-locking cider anti-zenburn-theme))))
+    (rjsx-mode dockerfile-mode prettier-js sml-mode evil-collection evil-nerd-commenter evil-visualstar evil all-the-fonts all-the-icons evil-matchit emmet-mode web-mode yahoo-weather zoom docker magit yasnippet-snippets yasnippet pretty-mode expand-region swiper popup-kill-ring dashboard rainbow-delimiters emacs-lisp exwm diminish spaceline switch-window rainbow-mode avy helm-config smex ido-vertical-mode ido-verticle-mode beacon spacemacs-theme zenburn-theme which-key use-package try projectile org neotree monokai-theme monokai-alt-theme molokai-theme company clojure-mode-extra-font-locking cider anti-zenburn-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

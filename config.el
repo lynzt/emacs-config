@@ -239,6 +239,26 @@ there's a region, all lines that region covers will be duplicated."
   :ensure t
   :bind ("C-x g" . magit-status))
 
+(use-package git-gutter
+  :ensure t
+  :init
+  (global-git-gutter-mode 1)
+  (progn
+    (setq git-gutter:separator-sign " "
+	  git-gutter:lighter " GG"))
+  :config
+  (progn
+    (set-face-background 'git-gutter:deleted "#990A1B")
+    (set-face-foreground 'git-gutter:deleted "#990A1B")
+    (set-face-background 'git-gutter:modified "#00736F")
+    (set-face-foreground 'git-gutter:modified "#00736F")
+    (set-face-background 'git-gutter:added "#546E00")
+    (set-face-foreground 'git-gutter:added "#546E00"))
+  :bind (("C-x p" . git-gutter:previous-hunk)
+	 ("C-x n" . git-gutter:next-hunk)
+	 ("C-x v =" . git-gutter:popup-hunk)
+	 ("C-x v r" . git-gutter:revert-hunk)))
+
 (use-package docker
   :ensure t
   :bind ("C-c C-d" . docker))
@@ -274,6 +294,7 @@ there's a region, all lines that region covers will be duplicated."
 (use-package web-mode
   :ensure t
   :mode ("\\.hbs\\'"
+         "\\.js\\'"
          "\\.jsx\\'"
          "\\.vue\\'"
          "/\\([Vv]iews\\|[Hh]tml\\|[Tt]emplates\\)/.*\\.php\\'"
@@ -283,6 +304,9 @@ there's a region, all lines that region covers will be duplicated."
   (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
   (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
   (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+
+(use-package rjsx-mode
+  :ensure t)
 
 (setq-default indent-tabs-mode nil)
 
