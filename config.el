@@ -298,21 +298,24 @@ there's a region, all lines that region covers will be duplicated."
 
 (use-package web-mode
   :ensure t
-  :mode ("\\.hbs\\'"
-         "\\.js\\'"
-         "\\.jsx\\'"
-         "\\.vue\\'"
-         "/\\([Vv]iews\\|[Hh]tml\\|[Tt]emplates\\)/.*\\.php\\'"
-         "\\.blade\\.php\\'")
+  :mode "\\.jsx$"
+  :mode "\\.js\\'"
   :config
-  (setq
-   web-mode-markup-indent-offset 2
-   web-mode-css-indent-offset 2
-   web-mode-code-indent-offset 2
-   web-mode-enable-auto-closing t
-   web-mode-enable-auto-opening t
-   web-mode-enable-auto-pairing t
-   web-mode-enable-auto-indentation t))
+  (progn
+    (defun my-web-hook ()
+      (setq
+        web-mode-markup-indent-offset 2
+        web-mode-css-indent-offset 2
+        web-mode-code-indent-offset 2
+        web-mode-enable-auto-closing t
+        web-mode-enable-auto-opening t
+        web-mode-enable-auto-pairing t
+        web-mode-enable-auto-indentation t))
+
+      (if (equal web-mode-content-type "javascript")
+            (web-mode-set-content-type "jsx")
+          (message "now set to: %s" web-mode-content-type)))
+    (add-hook 'web-mode-hook 'my-web-hook))
 
 (setq-default indent-tabs-mode nil)
 
