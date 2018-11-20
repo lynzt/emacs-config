@@ -375,14 +375,14 @@
 #+END_SRC
 * company modes
 ** company-web
-#+BEGIN_SRC emacs-lisp
+##+BEGIN_SRC emacs-lisp
   (use-package company-web
     :ensure t
     :init
     (add-to-list 'company-backends 'company-web-html))
 #+END_SRC
 ** company 
-#+BEGIN_SRC emacs-lisp
+##+BEGIN_SRC emacs-lisp
   (use-package tern
     :ensure t
     :config
@@ -390,7 +390,7 @@
     (add-hook 'web-mode-hook 'tern-mode))`
 #+END_SRC
 ** company-tern
-#+BEGIN_SRC emacs-lisp
+##+BEGIN_SRC emacs-lisp
   (use-package company-tern
     :ensure t
     :init
@@ -583,7 +583,11 @@
     :bind ("C-c k" . neotree)
     :config
     (setq neo-dont-be-alone t
-          neo-theme 'icons))
+          neo-theme 'icons)
+    (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-quick-look)
+    (evil-define-key 'normal neotree-mode-map (kbd "g") 'neotree-refresh)
+    (evil-define-key 'normal neotree-mode-map (kbd "u") 'neotree-select-up-node)
+   )
 #+END_SRC
 * modeline (smart line mode)
 #+BEGIN_SRC emacs-lisp

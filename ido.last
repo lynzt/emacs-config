@@ -11,14 +11,14 @@
  ("/Users/lynzt/" . ".emacs.d/")
  ("/Users/lynzt/coding/lynzt-learning/frontend_masters/" . "intro-to-react-4/")
  ("/Users/lynzt/coding/lynzt-learning/" . "frontend_masters/")
- ("/Users/lynzt/coding/" . "channeldragon/")
+ ("/Users/lynzt/coding/" . "fem/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/Users/lynzt/coding/fem/src/"
  "/Users/lynzt/coding/channeldragon/scripts/"
  "/Users/lynzt/coding/channeldragon/lib/models/"
- "/Users/lynzt/coding/fem/src/"
  "/Users/lynzt/coding/fem/"
  "/Users/lynzt/.emacs.d/"
  "/Users/lynzt/Downloads/vims/"
@@ -37,6 +37,7 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "App.js"
  "hit_playlistItem_api.py"
  "__init__.py"
  "channel_collections.js"
@@ -46,18 +47,17 @@
  "Carousel.js"
  "config.org"
  ".eslintrc.json"
- "package.json"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/Users/lynzt/.emacs.d/" (23540 4248 847903 878000) "games/" ".cache/" ".git/" "config.org~" "elpa/" "recentf" "package-lock.json" "bookmarks" "init.el" "auto-save-list/" "config.el" "#config.org#" "recentf.~1~" "recentf.~2~" "config.org" "smex-items" ".DS_Store" ".mc-lists.el" "ido.last" "snippets/" "../" "./")
+
  ("/Users/lynzt/coding/channeldragon/scripts/" (23191 6813 840714 495000) "modules/" "hit_playlistItem_api.py" "get_channel_subs.py" "search_youtube.py" "__init__.py" "tests/" "get_channel_details.py" "check_channel_video_dates.py" "tag_channels_bulk.py" "../" "./")
 
  ("/Users/lynzt/coding/channeldragon/lib/models/" (23191 6828 544128 543000) "channel_collections.js" "user_collection_channels.js" "search.js" "channel_collections_tags.js" "collections.js" "languages.js" "locations.js" "similar_channels.js" "channels.js" "users.js" "channel_tag_groups.js" "tags.js" "tag_groups.js" "channel_tags.js" "../" "./")
 
  ("/Users/lynzt/coding/channeldragon/lib/" (23127 2187 669893 851000) "helpers/" "routes/" "route_helpers/" "api/" "models/" "middleware/" "../" "./")
-
- ("/Users/lynzt/.emacs.d/" (23539 35691 316127 504000) "games/" ".cache/" ".git/" "config.org~" "elpa/" "recentf" "package-lock.json" "bookmarks" "init.el" "auto-save-list/" "config.el" "#config.org#" "recentf.~1~" "recentf.~2~" "config.org" "smex-items" ".DS_Store" ".mc-lists.el" "ido.last" "snippets/" "../" "./")
 
  ("/Users/lynzt/coding/fem/src/" (23539 30649 12946 486000) "App.js" "Carousel.js" "Details.js" "style.css" "Pet.js" "Results.js" "SearchParams.js" ".DS_Store" "index.html" "../" "./")
 

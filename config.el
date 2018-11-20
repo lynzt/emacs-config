@@ -226,25 +226,6 @@ there's a region, all lines that region covers will be duplicated."
   :config
   (global-company-mode 1))
 
-(use-package company-web
-  :ensure t
-  :init
-  (add-to-list 'company-backends 'company-web-html))
-
-(use-package tern
-  :ensure t
-  :config
-  (add-hook 'js2-mode-hook 'tern-mode)
-  (add-hook 'web-mode-hook 'tern-mode))`
-
-(use-package company-tern
-  :ensure t
-  :init
-  (add-to-list 'company-backends 'company-tern)
-  (add-to-list 'company-backends '(company-tern :with company-yasnippet))
-  :config
-  (setq company-tern-property-marker nil))
-
 (use-package popup-kill-ring
   :ensure t
   :bind ("M-y" . popup-kill-ring))
@@ -355,7 +336,11 @@ there's a region, all lines that region covers will be duplicated."
   :bind ("C-c k" . neotree)
   :config
   (setq neo-dont-be-alone t
-        neo-theme 'icons))
+        neo-theme 'icons)
+  (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-quick-look)
+  (evil-define-key 'normal neotree-mode-map (kbd "g") 'neotree-refresh)
+  (evil-define-key 'normal neotree-mode-map (kbd "u") 'neotree-select-up-node)
+ )
 
 (use-package sml-mode
   :ensure t
