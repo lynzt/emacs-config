@@ -213,10 +213,37 @@ there's a region, all lines that region covers will be duplicated."
   (other-window 1))
 (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
 
+(use-package yasnippet
+  :ensure t
+  :config
+  (use-package yasnippet-snippets
+    :ensure t)
+  (yas-reload-all))
+(add-hook 'prog-mode-hook #'yas-minor-mode)
+
 (use-package company
   :ensure t
+  :config
+  (global-company-mode 1))
+
+(use-package company-web
+  :ensure t
   :init
-  (add-hook 'after-init-hook 'global-company-mode))
+  (add-to-list 'company-backends 'company-web-html))
+
+(use-package tern
+  :ensure t
+  :config
+  (add-hook 'js2-mode-hook 'tern-mode)
+  (add-hook 'web-mode-hook 'tern-mode))`
+
+(use-package company-tern
+  :ensure t
+  :init
+  (add-to-list 'company-backends 'company-tern)
+  (add-to-list 'company-backends '(company-tern :with company-yasnippet))
+  :config
+  (setq company-tern-property-marker nil))
 
 (use-package popup-kill-ring
   :ensure t
@@ -225,14 +252,6 @@ there's a region, all lines that region covers will be duplicated."
 (use-package swiper
   :ensure t
   :bind ("C-s" . swiper))
-
-(use-package yasnippet
-  :ensure t
-  :config
-  (use-package yasnippet-snippets
-    :ensure t)
-  (yas-reload-all))
-(add-hook 'prog-mode-hook #'yas-minor-mode)
 
 (use-package magit
   :ensure t
