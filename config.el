@@ -361,3 +361,8 @@ there's a region, all lines that region covers will be duplicated."
   (smartparens-global-mode 1)
   :config
   (add-hook 'web-mode-hook #'turn-on-smartparens-mode t))
+
+(use-package indent-guide
+  :ensure t
+  :init
+  (indent-guide-global-mode))

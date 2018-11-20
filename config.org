@@ -589,3 +589,10 @@
     :config
     (add-hook 'web-mode-hook #'turn-on-smartparens-mode t))
 #+END_SRC
+* indent guide
+#+BEGIN_SRC emacs-lisp
+  (use-package indent-guide
+    :ensure t
+    :init
+    (indent-guide-global-mode))
+#+END_SRC
