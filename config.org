@@ -155,14 +155,18 @@
   (when window-system (global-hl-line-mode t))
 #+END_SRC
 ** change words to symbols
-###+BEGIN_SRC emacs-lisp
+##+BEGIN_SRC emacs-lisp
   (use-package pretty-mode
     :ensure t
     :config
     (global-pretty-mode t))
-##+END_SRC
+#+END_SRC
 #+BEGIN_SRC emacs-lisp
+  (global-prettify-symbols-mode t)
+#+END_SRC
+##+BEGIN_SRC emacs-lisp
   (global-prettify-symbols-mode 1)
+  
   (add-hook
    'js-mode-hook
    (lambda ()
@@ -575,4 +579,13 @@
     :ensure t
     :config
     (add-hook 'web-mode-hook 'prettier-js-mode))
+#+END_SRC
+* smart parens
+#+BEGIN_SRC emacs-lisp
+  (use-package smartparens
+    :ensure t
+    :init
+    (smartparens-global-mode 1)
+    :config
+    (add-hook 'web-mode-hook #'turn-on-smartparens-mode t))
 #+END_SRC

@@ -103,13 +103,7 @@ there's a region, all lines that region covers will be duplicated."
 
 (when window-system (global-hl-line-mode t))
 
-(global-prettify-symbols-mode 1)
-(add-hook
- 'js-mode-hook
- (lambda ()
-   (mapc (lambda (pair) (push pair prettify-symbols-alist))
-	'(("function" . #x192)
-	   ))))
+(global-prettify-symbols-mode t)
 
 (setq-default cursor-type 'bar)
 
@@ -360,3 +354,10 @@ there's a region, all lines that region covers will be duplicated."
   :ensure t
   :config
   (add-hook 'web-mode-hook 'prettier-js-mode))
+
+(use-package smartparens
+  :ensure t
+  :init
+  (smartparens-global-mode 1)
+  :config
+  (add-hook 'web-mode-hook #'turn-on-smartparens-mode t))
