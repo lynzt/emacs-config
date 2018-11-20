@@ -22,6 +22,11 @@
   :bind
   ("M-;" . evilnc-comment-or-uncomment-lines))
 
+(use-package evil-surround
+  :ensure t
+  :config
+  (global-evil-surround-mode 1))
+
 (setq evil-insert-state-cursor '((bar . 3) "#a6e22e")
       evil-normal-state-cursor '(box "#fd971f")
       evil-visual-state-cursor '(box "#f92672")
@@ -336,9 +341,10 @@ there's a region, all lines that region covers will be duplicated."
   :bind ("C-c k" . neotree)
   :config
   (setq neo-dont-be-alone t
+        neo-smart-open t
         neo-theme 'icons)
   (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-quick-look)
-  (evil-define-key 'normal neotree-mode-map (kbd "g") 'neotree-refresh)
+  (evil-define-key 'normal neotree-mode-map (kbd "r") 'neotree-refresh)
   (evil-define-key 'normal neotree-mode-map (kbd "u") 'neotree-select-up-node)
  )
 

@@ -31,6 +31,13 @@
     :bind
     ("M-;" . evilnc-comment-or-uncomment-lines))
 #+END_SRC
+** evil-surround
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-surround
+    :ensure t
+    :config
+    (global-evil-surround-mode 1))
+#+END_SRC
 ** evil modes cursor styles (monokai colors
 *** https://emacs.stackexchange.com/questions/7403/evil-cursor-change-by-state
 #+BEGIN_SRC emacs-lisp
@@ -583,9 +590,10 @@
     :bind ("C-c k" . neotree)
     :config
     (setq neo-dont-be-alone t
+          neo-smart-open t
           neo-theme 'icons)
     (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-quick-look)
-    (evil-define-key 'normal neotree-mode-map (kbd "g") 'neotree-refresh)
+    (evil-define-key 'normal neotree-mode-map (kbd "r") 'neotree-refresh)
     (evil-define-key 'normal neotree-mode-map (kbd "u") 'neotree-select-up-node)
    )
 #+END_SRC
