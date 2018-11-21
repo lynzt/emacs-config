@@ -17,11 +17,11 @@
 ;; ----- ido-work-directory-list -----
 (
  "/Users/lynzt/coding/fem/src/"
+ "/Users/lynzt/Downloads/vims/"
  "/Users/lynzt/coding/channeldragon/scripts/"
  "/Users/lynzt/coding/channeldragon/lib/models/"
  "/Users/lynzt/coding/fem/"
  "/Users/lynzt/.emacs.d/"
- "/Users/lynzt/Downloads/vims/"
  "/Users/lynzt/coding/channeldragon/"
  "/Users/lynzt/Downloads/"
  "/Users/lynzt/"
@@ -37,6 +37,8 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "SearchContext.js"
+ "notes.org"
  "App.js"
  "hit_playlistItem_api.py"
  "__init__.py"
@@ -45,13 +47,11 @@
  "SearchParams.js"
  ".babelrc"
  "Carousel.js"
- "config.org"
- ".eslintrc.json"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/lynzt/.emacs.d/" (23540 4248 847903 878000) "games/" ".cache/" ".git/" "config.org~" "elpa/" "recentf" "package-lock.json" "bookmarks" "init.el" "auto-save-list/" "config.el" "#config.org#" "recentf.~1~" "recentf.~2~" "config.org" "smex-items" ".DS_Store" ".mc-lists.el" "ido.last" "snippets/" "../" "./")
+ ("/Users/lynzt/.emacs.d/" (23540 11103 557743 832000) "games/" ".cache/" ".git/" "config.org~" "elpa/" "recentf" "package-lock.json" "bookmarks" "init.el" "auto-save-list/" "config.el" "#config.org#" "recentf.~1~" "recentf.~2~" "config.org" "smex-items" ".DS_Store" ".mc-lists.el" "ido.last" "snippets/" "../" "./")
 
  ("/Users/lynzt/coding/channeldragon/scripts/" (23191 6813 840714 495000) "modules/" "hit_playlistItem_api.py" "get_channel_subs.py" "search_youtube.py" "__init__.py" "tests/" "get_channel_details.py" "check_channel_video_dates.py" "tag_channels_bulk.py" "../" "./")
 

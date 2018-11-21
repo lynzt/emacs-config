@@ -6,6 +6,9 @@
     :init
     (setq evil-want-integration t)
     (setq evil-want-keybinding nil)
+    (setq evil-search-module 'evil-search)
+    ;; (setq-default evil-search-module 'evil-search)
+    ;; '(evil-search-module (quote evil-search))
     :config
     (evil-mode 1))
 #+END_SRC
