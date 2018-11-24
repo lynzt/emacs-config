@@ -4,8 +4,6 @@
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
   (setq evil-search-module 'evil-search)
-  ;; (setq-default evil-search-module 'evil-search)
-  ;; '(evil-search-module (quote evil-search))
   :config
   (evil-mode 1))
 
@@ -163,7 +161,10 @@ there's a region, all lines that region covers will be duplicated."
   :ensure t
   :config
   (dashboard-setup-startup-hook)
-  (setq dashboard-items '((recents . 10)))
+  (setq dashboard-items '((recents . 10)
+                          (bookmarks . 5)
+                          (projects . 5)
+                          ))
   (setq dashboard-banner-logo-title "Don't wait. The time will never be just right"))
 
 (global-set-key (kbd "C-x b") 'ibuffer)
@@ -226,8 +227,8 @@ there's a region, all lines that region covers will be duplicated."
   :config
   (use-package yasnippet-snippets
     :ensure t)
-  (yas-reload-all))
-(add-hook 'prog-mode-hook #'yas-minor-mode)
+  (yas-reload-all)
+  (yas-global-mode))
 
 (use-package company
   :ensure t
@@ -300,24 +301,29 @@ there's a region, all lines that region covers will be duplicated."
 
 (use-package web-mode
   :ensure t
-  :mode "\\.jsx$"
-  :mode "\\.js\\'"
   :config
-  (progn
-    (defun my-web-hook ()
-      (setq
-        web-mode-markup-indent-offset 2
-        web-mode-css-indent-offset 2
-        web-mode-code-indent-offset 2
-        web-mode-enable-auto-closing t
-        web-mode-enable-auto-opening t
-        web-mode-enable-auto-pairing t
-        web-mode-enable-auto-indentation t))
+  (add-to-list 'auto-mode-alist '("\\.hhtml?\\'" . web-mode ))
+  (setq web-mode-engines-alist
+        '(("django" . "\\.html\\'")))
+  (setq web-mode-ac-sources-alist
+        '(("css" . (ac-sources-alist))
+          ("html" . (ac-sources-words-in-buffer ac-sources abbrev))))
+  (setq web-mode-enabler-auto-closing t))
 
-      (if (equal web-mode-content-type "javascript")
-            (web-mode-set-content-type "jsx")
-          (message "now set to: %s" web-mode-content-type)))
-    (add-hook 'web-mode-hook 'my-web-hook))
+  ;; (progn
+    ;; (defun my-web-hook ()
+      ;; (setq
+        ;; web-mode-markup-indent-offset 2
+        ;; web-mode-css-indent-offset 2
+        ;; web-mode-code-indent-offset 2
+        ;; web-mode-enable-auto-closing t
+        ;; web-mode-enable-auto-opening t
+        ;; web-mode-enable-auto-pairing t
+        ;; web-mode-enable-auto-indentation t))
+;; 
+      ;; (if (web-mode-set-content-type "jsx")
+          ;; (message "now set to: %s" web-mode-content-type)))
+    ;; (add-hook 'web-mode-hook 'my-web-hook))
 
 (setq-default indent-tabs-mode nil)
 
@@ -374,8 +380,3 @@ there's a region, all lines that region covers will be duplicated."
   (smartparens-global-mode 1)
   :config
   (add-hook 'web-mode-hook #'turn-on-smartparens-mode t))
-
-(use-package indent-guide
-  :ensure t
-  :init
-  (indent-guide-global-mode))
