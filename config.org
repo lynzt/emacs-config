@@ -170,17 +170,16 @@
     (global-pretty-mode t))
 #+END_SRC
 #+BEGIN_SRC emacs-lisp
-  (global-prettify-symbols-mode t)
+;;  (global-prettify-symbols-mode t)
 #+END_SRC
-##+BEGIN_SRC emacs-lisp
+#+BEGIN_SRC emacs-lisp
   (global-prettify-symbols-mode 1)
-  
   (add-hook
    'js-mode-hook
    (lambda ()
      (mapc (lambda (pair) (push pair prettify-symbols-alist))
-	  '(("function" . #x192)
-	     ))))
+    '(("function" . #x192)
+       ))))
 #+END_SRC
 * cursor (bar)
 #+BEGIN_SRC emacs-lisp
@@ -561,6 +560,21 @@
             ;; (message "now set to: %s" web-mode-content-type)))
       ;; (add-hook 'web-mode-hook 'my-web-hook))
 #+END_SRC
+* js2 mode
+#+BEGIN_SRC emacs-lisp
+    (use-package js2-mode
+      :ensure t
+      :mode "\\.js\\'"
+      :interpreter "node"
+      :config
+      (use-package rjsx-mode
+        :ensure t)
+      (use-package json-mode
+        :ensure t)
+      (use-package nodejs-repl
+        :ensure t))
+
+#+END_SRC
 * indent levels
 #+BEGIN_SRC emacs-lisp
   (setq-default indent-tabs-mode nil)
@@ -620,11 +634,12 @@
 #+END_SRC
 
 * prettier
-#+BEGIN_SRC emacs-lisp
+##+BEGIN_SRC emacs-lisp
   (use-package prettier-js
     :ensure t
     :config
-    (add-hook 'web-mode-hook 'prettier-js-mode))
+e   (add-hook 'web-mode-hook 'prettier-js-mode)
+    (add-hook 'js2-mode-hook 'prettier-js-mode))
 #+END_SRC
 * smart parens
 #+BEGIN_SRC emacs-lisp
@@ -641,4 +656,15 @@
     :ensure t
     :init
     (indent-guide-global-mode))
+#+END_SRC
+* markdown
+#+BEGIN_SRC emacs-lisp
+  (use-package markdown-mode
+    :ensure t
+    :commands (markdown-mode gfm-mode)
+    :mode(("README\\.md\\'" . gfm-mode)
+          ("\\.md\\'" . markdown-mode)
+          ("\\.markdown\\'" . markdown-mode))
+    :init
+    (setq markdown-command "multimarkdown"))
 #+END_SRC

@@ -109,7 +109,15 @@ there's a region, all lines that region covers will be duplicated."
 
 (when window-system (global-hl-line-mode t))
 
-(global-prettify-symbols-mode t)
+;;  (global-prettify-symbols-mode t)
+
+(global-prettify-symbols-mode 1)
+(add-hook
+ 'js-mode-hook
+ (lambda ()
+   (mapc (lambda (pair) (push pair prettify-symbols-alist))
+  '(("function" . #x192)
+     ))))
 
 (setq-default cursor-type 'bar)
 
@@ -325,6 +333,18 @@ there's a region, all lines that region covers will be duplicated."
           ;; (message "now set to: %s" web-mode-content-type)))
     ;; (add-hook 'web-mode-hook 'my-web-hook))
 
+(use-package js2-mode
+  :ensure t
+  :mode "\\.js\\'"
+  :interpreter "node"
+  :config
+  (use-package rjsx-mode
+    :ensure t)
+  (use-package json-mode
+    :ensure t)
+  (use-package nodejs-repl
+    :ensure t))
+
 (setq-default indent-tabs-mode nil)
 
 (setq-default tab-width 2)
@@ -369,14 +389,18 @@ there's a region, all lines that region covers will be duplicated."
           evil-visual-state-tag   (propertize " <V> " 'face '((:background "#f92672"           :foreground "black")))
           evil-operator-state-tag (propertize " <O> " 'face '((:background "#66d9ef"    :foreground "black")))))
 
-(use-package prettier-js
-  :ensure t
-  :config
-  (add-hook 'web-mode-hook 'prettier-js-mode))
-
 (use-package smartparens
   :ensure t
   :init
   (smartparens-global-mode 1)
   :config
   (add-hook 'web-mode-hook #'turn-on-smartparens-mode t))
+
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode(("README\\.md\\'" . gfm-mode)
+        ("\\.md\\'" . markdown-mode)
+        ("\\.markdown\\'" . markdown-mode))
+  :init
+  (setq markdown-command "multimarkdown"))
