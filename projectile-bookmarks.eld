@@ -1,1 +1,1 @@
-("~/coding/channeldragon/" "~/.emacs.d/" "~/coding/fem/")
+("~/.emacs.d/" "~/coding/channeldragon/" "~/coding/fem/")

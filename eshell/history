@@ -1,0 +1,22 @@
+ls
+cd ../
+ls
+cd..
+ls
+cd ..
+ls
+cd coding
+ls
+ll
+ls
+docker
+cd ../../
+ls
+cd vims
+python --v
+python -v
+python --version
+python3 --version
+exit
+exit
+python3 --version
