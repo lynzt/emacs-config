@@ -61,7 +61,7 @@
 #+END_SRC
 * frames
 ** frame size
-#+BEGIN_SRC emacs-lisp
+##+BEGIN_SRC emacs-lisp
   (when window-system (set-frame-size (selected-frame) 120 60))
 #+END_SRC
 * minor settings
@@ -180,6 +180,14 @@
      (mapc (lambda (pair) (push pair prettify-symbols-alist))
     '(("function" . #x192)
        ))))
+#+END_SRC
+** wrap lines
+#+BEGIN_SRC emacs-lisp
+(setq-default word-wrap t)
+#+END_SRC
+** new line at bottom of file 
+#+BEGIN_SRC emacs-lisp
+(setq-default require-final-newline t)
 #+END_SRC
 * cursor (bar)
 #+BEGIN_SRC emacs-lisp

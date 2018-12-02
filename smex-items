@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ toggle-truncate-lines
+ eshell
+ run-python
+ shell
+ recover-file
  run-with-timer
  package-autoremove
- list-packages
- dired
- customize
- cd
- 5x5
 )
 
 ;; ----- smex-data -----
@@ -19,4 +19,9 @@
  (dashboard-mode . 1)
  (yas-describe-tables . 1)
  (run-with-timer . 2)
+ (recover-file . 2)
+ (shell . 2)
+ (eshell . 2)
+ (run-python . 2)
+ (toggle-truncate-lines . 2)
 )

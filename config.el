@@ -43,8 +43,6 @@ kept-old-versions 2
 version-control t
 create-lockfiles nil)
 
-(when window-system (set-frame-size (selected-frame) 120 60))
-
 (line-number-mode 1)
   (column-number-mode 1)
 ;  (add-hook 'prog-mode-hook #'display-line-numbers-mode)
@@ -118,6 +116,10 @@ there's a region, all lines that region covers will be duplicated."
    (mapc (lambda (pair) (push pair prettify-symbols-alist))
   '(("function" . #x192)
      ))))
+
+(setq-default word-wrap t)
+
+(setq-default require-final-newline t)
 
 (setq-default cursor-type 'bar)
 
