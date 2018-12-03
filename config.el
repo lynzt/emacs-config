@@ -171,8 +171,9 @@ there's a region, all lines that region covers will be duplicated."
   :ensure t
   :config
   (dashboard-setup-startup-hook)
-  (setq dashboard-items '((recents . 10)
+  (setq dashboard-items '(
                           (bookmarks . 5)
+                          (recents . 10)
                           (projects . 5)
                           ))
   (setq dashboard-banner-logo-title "Don't wait. The time will never be just right"))

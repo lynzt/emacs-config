@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ yas-describe-tables
  toggle-truncate-lines
  eshell
  run-python
  shell
  recover-file
  run-with-timer
- package-autoremove
 )
 
 ;; ----- smex-data -----
@@ -17,7 +17,7 @@
  (list-packages . 1)
  (package-autoremove . 1)
  (dashboard-mode . 1)
- (yas-describe-tables . 1)
+ (yas-describe-tables . 2)
  (run-with-timer . 2)
  (recover-file . 2)
  (shell . 2)
