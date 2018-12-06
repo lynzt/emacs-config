@@ -49,6 +49,14 @@
         evil-operator-state-cursor '((hbar . 4) "#66d9ef")
   )
 #+END_SRC
+** evil-mc
+#+BEGIN_SRC emacs-lisp
+  (use-package evil-mc
+    :ensure t
+    :after evil
+    :config
+    (global-evil-mc-mode))
+#+END_SRC
 * auto backups (dir)
 #+BEGIN_SRC emacs-lisp
   (setq backup-by-copying t
@@ -550,7 +558,14 @@
           '(("css" . (ac-sources-alist))
             ("html" . (ac-sources-words-in-buffer ac-sources abbrev))))
     (setq web-mode-enabler-auto-closing t))
-
+  (defun my-web-mode-hook ()
+    "Hooks for Web mode."
+    (setq web-mode-markup-indent-offset 2)
+    (setq web-mode-css-indent-offset 2)
+    (setq web-mode-code-indent-offset 2)
+    (setq web-mode-attr-indent-offset 2)
+  )
+  (add-hook 'web-mode-hook  'my-web-mode-hook)
     ;; (progn
       ;; (defun my-web-hook ()
         ;; (setq
@@ -580,6 +595,11 @@
       (use-package nodejs-repl
         :ensure t))
 
+#+END_SRC
+* vue mode
+#+BEGIN_SRC emacs-lisp
+  (use-package vue-mode
+    :ensure t)
 #+END_SRC
 * indent levels
 #+BEGIN_SRC emacs-lisp
@@ -689,6 +709,7 @@ e   (add-hook 'web-mode-hook 'prettier-js-mode)
     :config
     (add-hook 'web-mode-hook #'turn-on-smartparens-mode t))
 #+END_SRC
+
 * indent guide
 ##+BEGIN_SRC emacs-lisp
   (use-package indent-guide
@@ -706,4 +727,15 @@ e   (add-hook 'web-mode-hook 'prettier-js-mode)
           ("\\.markdown\\'" . markdown-mode))
     :init
     (setq markdown-command "multimarkdown"))
+#+END_SRC
+* projectile
+##+BEGIN_SRC emacs-lisp
+  (use-package projectile
+    :ensure t
+    :config
+    (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+    (projectile-mode +1)
+    :init
+    (setq projectile-project-search-path '("~/coding/" "~/notes/")))
 #+END_SRC

@@ -35,6 +35,12 @@
       evil-operator-state-cursor '((hbar . 4) "#66d9ef")
 )
 
+(use-package evil-mc
+  :ensure t
+  :after evil
+  :config
+  (global-evil-mc-mode))
+
 (setq backup-by-copying t
 backup-directory-alist '(("." . "~/.backups/emacs/"))
 delete-old-versions t
@@ -317,7 +323,14 @@ there's a region, all lines that region covers will be duplicated."
         '(("css" . (ac-sources-alist))
           ("html" . (ac-sources-words-in-buffer ac-sources abbrev))))
   (setq web-mode-enabler-auto-closing t))
-
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-attr-indent-offset 2)
+)
+(add-hook 'web-mode-hook  'my-web-mode-hook)
   ;; (progn
     ;; (defun my-web-hook ()
       ;; (setq
@@ -344,6 +357,9 @@ there's a region, all lines that region covers will be duplicated."
     :ensure t)
   (use-package nodejs-repl
     :ensure t))
+
+(use-package vue-mode
+  :ensure t)
 
 (setq-default indent-tabs-mode nil)
 

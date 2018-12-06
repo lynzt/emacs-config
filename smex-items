@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ find-library
+ evil-mc-undo-all-cursors
  yas-describe-tables
  toggle-truncate-lines
  eshell
  run-python
  shell
- recover-file
- run-with-timer
 )
 
 ;; ----- smex-data -----
@@ -24,4 +24,6 @@
  (eshell . 2)
  (run-python . 2)
  (toggle-truncate-lines . 2)
+ (evil-mc-undo-all-cursors . 3)
+ (find-library . 1)
 )
